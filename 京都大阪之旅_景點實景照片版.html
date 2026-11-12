@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#FFFCF6">
+  <meta name="description" content="2026 年 11 月 28 日至 12 月 5 日，京都大阪 8 天 7 夜旅行繪本手帳：航班、每日景點、飯店、出發準備與行李清單。">
+  <title>京都大阪之旅｜2026 秋日旅行手帳</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Huninn&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #FFFCF6;
+      --ink: #3E3A39;
+      --pink: #F2A497;
+      --yellow: #F6D27A;
+      --blue: #A8D3E6;
+      --green: #B9DAA5;
+      --soft-pink: #FFF0EA;
+      --soft-blue: #EFF8FB;
+      --soft-yellow: #FFF8E8;
+      --soft-green: #F1F9E9;
+      --white: #FFFFFF;
+      --radius: 28px;
+      --line: 3px solid var(--ink);
+      --offset: 5px 5px 0 var(--ink);
+      --header-height: 116px;
+      font-family: "Huninn", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-height) + 22px); }
+    body { margin: 0; min-width: 320px; background: var(--paper); font-size: 16px; line-height: 1.65; }
+    button, input { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button { color: inherit; }
+    a { color: inherit; }
+    svg { display: block; }
+    ::selection { background: var(--yellow); color: var(--ink); }
+    .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; border: 0; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
+    .skip-link { position: fixed; top: -80px; left: 20px; z-index: 99; background: var(--yellow); border: var(--line); border-radius: 16px; padding: 8px 16px; }
+    .skip-link:focus { top: 12px; }
+    :focus-visible { outline: 4px solid #BD6F88; outline-offset: 4px; }
+    .icon { width: 24px; height: 24px; flex: none; }
+    .icon.sm { width: 18px; height: 18px; }
+    .icon.xl { width: 54px; height: 54px; }
+    .shell { width: min(1160px, calc(100% - 36px)); margin-inline: auto; }
+    .site-header { position: fixed; inset: 0 0 auto; z-index: 40; background: var(--paper); border-bottom: var(--line); }
+    .site-header::after { content: ""; display:block; height: 5px; background:var(--pink); }
+    .header-inner { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; min-height: 62px; padding: 10px 0 8px; }
+    .brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 900; white-space: nowrap; font-size: 1.06rem; letter-spacing: .015em; }
+    .brand-mark { display: grid; place-items: center; background: var(--pink); width: 42px; height: 42px; border: var(--line); border-radius: 15px; transform: rotate(-7deg); }
+    .brand-mark .icon { transform: rotate(-20deg); }
+    .header-note { margin-left: auto; font-size: .79rem; font-weight: 800; border: 2px solid var(--ink); padding: 2px 10px; border-radius: 999px; background: var(--soft-yellow); white-space: nowrap; }
+    .site-nav { display:flex; flex:0 0 100%; min-width:0; gap: 8px; flex-wrap:nowrap; overflow-x:auto; scrollbar-width:none; padding: 0 0 3px; }
+    .site-nav::-webkit-scrollbar, .day-tabs::-webkit-scrollbar { display:none; }
+    .site-nav a { text-decoration:none; font-weight:800; font-size: .83rem; white-space: nowrap; padding: 3px 11px; border:2px solid transparent; border-radius: 999px; }
+    .site-nav a:hover, .site-nav a:focus-visible { border-color: var(--ink); background:var(--soft-pink); }
+    .site-nav a[aria-current="true"] { background:var(--yellow); border-color:var(--ink); }
+    main { padding-top: calc(var(--header-height) + 22px); }
+    section[id] { scroll-margin-top: calc(var(--header-height) + 24px); }
+    .section { padding: 38px 0 16px; }
+    .section-heading { display:flex; align-items:center; gap:16px; margin-bottom:22px; }
+    .section-title { margin:0; font-size:clamp(1.7rem, 4.8vw, 2.5rem); letter-spacing:.02em; line-height:1.3; }
+    .eyebrow { font-size:.8rem; font-weight:900; letter-spacing:.13em; color: #8E665F; margin:0 0 6px; }
+    .section-icon { width:65px; height:65px; border:var(--line); border-radius:22px; display:grid; place-items:center; transform:rotate(-5deg); flex:none; }
+    .section-icon svg { width:36px; height:36px; }
+    .section-sub { font-size:.93rem; margin: 4px 0 0; color:#645E59; }
+    .ink-card { border:var(--line); border-radius:var(--radius); background:var(--white); box-shadow:var(--offset); }
+    .pill { display:inline-flex; align-items:center; justify-content:center; gap:6px; border:2px solid var(--ink); border-radius:999px; padding:4px 12px; font-size:.85rem; font-weight:900; line-height:1.35; white-space:nowrap; }
+    .pill.pink { background:var(--pink); } .pill.yellow { background:var(--yellow); } .pill.blue { background:var(--blue); } .pill.green { background:var(--green); }
+    .star-doodle { position:absolute; width:23px; height:23px; color:#DA8D78; }
+    .hero { position:relative; padding-top:12px; }
+    .hero-card { display:grid; grid-template-columns:1fr; position:relative; overflow:hidden; border:var(--line); border-radius:36px; background:#FFF6ED; box-shadow:7px 7px 0 var(--ink); }
+    .hero-card::before { content:""; position:absolute; top:-65px; right:-60px; width:180px; height:180px; background:#FCE8E9; border:3px solid var(--ink); border-radius:50%; }
+    .hero-copy { position:relative; z-index:2; padding:32px 26px 20px; }
+    .hero-kicker { display:inline-flex; align-items:center; gap:8px; background:var(--white); border:var(--line); border-radius:100px; font-size:.82rem; font-weight:900; padding:5px 15px; transform:rotate(-2deg); }
+    .hero-kicker .icon { width:20px; height:20px; }
+    .hero-title { font-size:clamp(2.9rem, 10.5vw, 5.8rem); line-height:1.15; letter-spacing:.035em; font-weight:900; margin:24px 0 14px; }
+    .hero-title .highlight { display:inline-block; position:relative; isolation:isolate; }
+    .hero-title .highlight::after { content:""; position:absolute; bottom:4px; left:-4px; right:-4px; height:18px; background:var(--yellow); z-index:-1; border-radius:10px; transform:rotate(-1.2deg); }
+    .hero-description { font-size:1.03rem; font-weight:700; margin:0 0 22px; max-width:28em; }
+    .hero-pills { display:flex; flex-wrap:wrap; gap:9px; margin-bottom:23px; }
+    .hero-buttons { display:flex; flex-wrap:wrap; gap:11px; margin-top:24px; }
+    .button { display:inline-flex; align-items:center; justify-content:center; gap:9px; text-decoration:none; cursor:pointer; border:var(--line); border-radius:16px; padding:10px 16px; background:var(--white); font-size:.94rem; font-weight:900; transition:transform .16s ease, box-shadow .16s ease; }
+    .button:hover { transform:translateY(-3px); box-shadow:3px 3px 0 var(--ink); }
+    .button.primary { background:var(--pink); }
+    .button.soft { background:var(--soft-yellow); }
+    .button.mini { font-size:.83rem; padding:7px 11px; border-width:2px; border-radius:13px; }
+    .button .icon { width:19px; height:19px; }
+    .hero-art { align-self:stretch; display:flex; flex-direction:column; justify-content:flex-end; min-height:300px; padding:0 5px 5px; }
+    .hero-art svg { width:100%; max-height:390px; height:auto; overflow:visible; }
+    .hero-art-caption { align-self:flex-end; margin:0 21px 12px; padding:4px 13px; border:2px solid var(--ink); border-radius:999px; background:var(--white); font-size:.78rem; font-weight:900; transform:rotate(-4deg); }
+    .float-slow { animation:floatSlow 4.5s ease-in-out infinite; transform-origin:center; }
+    .float-medium { animation:floatMedium 3.4s ease-in-out infinite; transform-origin:center; }
+    .sway { animation:sway 5s ease-in-out infinite; transform-origin:bottom center; }
+    .quick-strip { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin-top:24px; }
+    .quick-stat { background:var(--white); border:var(--line); border-radius:20px; display:flex; align-items:center; gap:10px; padding:13px 12px; }
+    .quick-stat .stat-emoji { width:40px; height:40px; display:grid; place-items:center; border:2px solid var(--ink); border-radius:14px; background:var(--yellow); flex:none; }
+    .quick-stat:nth-child(2) .stat-emoji { background:var(--blue); }
+    .quick-stat:nth-child(3) .stat-emoji { background:var(--green); }
+    .quick-stat:nth-child(4) .stat-emoji { background:var(--pink); }
+    .stat-label { margin:0; font-size:.75rem; font-weight:800; color:#756961; }
+    .stat-main { margin:0; font-size:1.03rem; font-weight:900; line-height:1.3; }
+    .flight-grid { display:grid; gap:18px; }
+    .flight-card { position:relative; overflow:hidden; padding:22px 20px 20px; background:#FFFDFB; }
+    .flight-card::after { content:""; position:absolute; right:-32px; top:-35px; width:128px; height:128px; border:3px solid var(--ink); border-radius:50%; background:#FCE9EA; opacity:.5; pointer-events:none; }
+    .flight-card.return::after { background:#EAF5F9; }
+    .flight-card > * { position:relative; z-index:1; }
+    .flight-top { display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:22px; }
+    .airline { font-weight:900; font-size:.9rem; display:flex; gap:5px; align-items:center; }
+    .airline .icon { width:21px; height:21px; }
+    .flight-route { display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:6px; }
+    .airport { min-width:0; }
+    .airport:last-child { text-align:right; }
+    .airport-code { font-weight:900; line-height:1; font-size:clamp(1.65rem, 6vw, 2.4rem); letter-spacing:.035em; }
+    .airport-city { font-weight:800; font-size:.8rem; margin-top:9px; }
+    .airport-time { font-size:clamp(1.45rem,5.6vw,2rem); font-weight:900; margin-top:2px; font-variant-numeric:tabular-nums; }
+    .flight-middle { display:flex; flex-direction:column; align-items:center; gap:3px; width:75px; }
+    .flight-middle svg { width:36px; height:36px; transform:rotate(45deg); }
+    .flight-dash { width:100%; height:3px; border-top:3px dashed #B08B86; }
+    .flight-bottom { border-top:2px dashed #D7BBB6; display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px; padding-top:13px; margin-top:22px; font-size:.82rem; font-weight:800; }
+    .flight-note { display:flex; gap:11px; margin-top:20px; align-items:flex-start; background:var(--soft-blue); padding:15px 17px; border:2px solid var(--ink); border-radius:17px; font-size:.86rem; }
+    .flight-note .icon { flex:none; width:23px; height:23px; }
+    .flight-note p { margin:0; }
+    .day-bar { position:relative; border:var(--line); background:var(--white); border-radius:23px; padding:10px; box-shadow:var(--offset); margin-bottom:21px; }
+    .day-tabs { display:flex; overflow-x:auto; gap:8px; scrollbar-width:none; scroll-snap-type:x proximity; padding:1px 1px 4px; }
+    .day-tab { min-width:94px; padding:9px 10px; border:2px solid var(--ink); border-radius:15px; background:#FFFDFB; font-weight:900; text-align:center; cursor:pointer; transition:transform .18s ease, background .18s ease; flex:none; scroll-snap-align:start; }
+    .day-tab:hover { background:var(--soft-yellow); transform:translateY(-2px); }
+    .day-tab[aria-selected="true"] { background:var(--pink); box-shadow:3px 3px 0 var(--ink); transform:translateY(-2px); }
+    .day-tab .day-tiny { display:block; font-size:.68rem; letter-spacing:.07em; }
+    .day-tab .day-date { display:block; font-size:1.02rem; line-height:1.45; }
+    .itinerary-board { display:grid; gap:18px; }
+    .day-cover { position:relative; display:grid; grid-template-columns:1fr; gap:12px; padding:23px 24px; overflow:hidden; background:var(--soft-pink); }
+    .day-cover[data-color="yellow"] { background:var(--soft-yellow); }
+    .day-cover[data-color="blue"] { background:var(--soft-blue); }
+    .day-cover[data-color="green"] { background:var(--soft-green); }
+    .day-number { font-size:.72rem; letter-spacing:.11em; font-weight:900; margin:0 0 4px; }
+    .day-heading { margin:0 0 6px; font-size:clamp(1.5rem,6vw,2.1rem); line-height:1.35; }
+    .day-summary { margin:0; font-weight:700; font-size:.91rem; max-width:36em; }
+    .day-art-sticker { align-self:center; justify-self:end; height:102px; width:122px; border:3px solid var(--ink); border-radius:33px; display:grid; place-items:center; background:var(--white); transform:rotate(5deg); position:relative; }
+    .day-art-sticker::before { content:""; position:absolute; border:2px dashed #CBBFB3; width:138px; height:118px; border-radius:36px; }
+    .day-art-sticker .icon { width:78px; height:78px; animation:floatSlow 4s ease-in-out infinite; }
+    .timeline-card { padding:18px 17px 23px; }
+    .timeline-intro { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; padding:0 3px 16px; }
+    .timeline-intro h3 { margin:0; font-size:1.2rem; }
+    .meter-block { min-width: 180px; flex:1; max-width:260px; }
+    .meter-label { display:flex; justify-content:space-between; font-size:.78rem; font-weight:900; margin-bottom:6px; }
+    .meter { height:12px; border:2px solid var(--ink); border-radius:99px; background:var(--paper); overflow:hidden; }
+    .meter-fill { background:var(--green); height:100%; width:0%; border-radius:99px; transition:width .3s ease; }
+    .timeline-list { position:relative; display:grid; gap:17px; }
+    .timeline-list::before { content:""; position:absolute; top:19px; bottom:18px; left:91px; width:3px; background:#CFC4B8; }
+    .timeline-item { position:relative; display:grid; grid-template-columns:76px minmax(0,1fr); gap:28px; align-items:start; }
+    .timeline-time { font-size:.78rem; font-weight:900; text-align:right; padding-top:24px; line-height:1.35; }
+    .timeline-dot { position:absolute; left:82px; top:23px; width:21px; height:21px; border:3px solid var(--ink); background:var(--yellow); border-radius:50%; z-index:2; }
+    .timeline-item:nth-child(4n+2) .timeline-dot { background:var(--pink); }
+    .timeline-item:nth-child(4n+3) .timeline-dot { background:var(--blue); }
+    .timeline-item:nth-child(4n+4) .timeline-dot { background:var(--green); }
+    .timeline-content { border:2px solid var(--ink); background:var(--white); border-radius:20px; padding:13px 13px 12px; transition:background .2s ease; min-width:0; }
+    .timeline-item.is-done .timeline-content { background:var(--soft-green); }
+    .timeline-mainline { display:flex; align-items:flex-start; gap:10px; }
+    .check-control { position:relative; display:inline-flex; align-items:center; justify-content:center; flex:none; cursor:pointer; margin-top:2px; }
+    .check-control input { position:absolute; opacity:0; width:29px; height:29px; margin:0; cursor:pointer; }
+    .check-control input:focus-visible + .check-look { outline:4px solid #BD6F88; outline-offset:4px; }
+    .check-look { display:grid; place-items:center; width:29px; height:29px; border:3px solid var(--ink); border-radius:9px; background:var(--white); transition:background .18s ease, transform .18s ease; }
+    .check-look svg { width:18px; height:18px; opacity:0; transform:scale(.6); transition:opacity .18s ease, transform .18s ease; }
+    .check-control input:checked + .check-look { background:var(--green); }
+    .check-control input:checked + .check-look svg { opacity:1; transform:scale(1); }
+    .timeline-title { font-size:1.01rem; font-weight:900; line-height:1.45; margin:0; }
+    .timeline-item.is-done .timeline-title { text-decoration:line-through; text-decoration-thickness:2px; text-decoration-color:#8C9782; }
+    .timeline-desc { font-size:.83rem; margin:5px 0 0; color:#69605B; }
+    .timeline-tags { display:flex; align-items:center; flex-wrap:wrap; gap:7px; margin:12px 0 0 39px; }
+    .tag { display:inline-flex; align-items:center; gap:5px; font-size:.72rem; font-weight:900; border:1.8px solid var(--ink); border-radius:8px; padding:2px 9px; line-height:1.45; white-space:nowrap; }
+    .tag.rail { background:var(--blue); } .tag.walk { background:var(--green); } .tag.bus { background:var(--yellow); } .tag.air { background:var(--pink); } .tag.other { background:var(--soft-yellow); }
+    .tag.must { background:var(--pink); }
+    .map-inline { display:inline-flex; align-items:center; gap:3px; font-size:.76rem; font-weight:900; text-decoration:none; text-underline-offset:3px; border-bottom:1px dashed var(--ink); margin-left:auto; }
+    .map-inline:hover { color:#9D5D58; }
+    .day-advice { display:flex; gap:12px; align-items:flex-start; background:var(--soft-yellow); border:2px dashed var(--ink); border-radius:18px; margin-top:20px; padding:15px; }
+    .day-advice .icon { flex:none; width:26px; height:26px; }
+    .day-advice p { margin:0; font-size:.87rem; font-weight:700; }
+    .bounce-in { animation:pageBounce .38s cubic-bezier(.22, 1.3, .4, 1) both; }
+    .stay-grid { display:grid; gap:19px; }
+    .stay-card { padding:23px 20px; position:relative; overflow:hidden; }
+    .stay-card::after { content:""; width:140px; height:140px; position:absolute; right:-55px; top:-60px; border:3px solid var(--ink); background:var(--soft-pink); border-radius:50%; pointer-events:none; }
+    .stay-card.osaka::after { background:var(--soft-blue); }
+    .stay-head { position:relative; z-index:1; display:flex; gap:12px; align-items:center; margin-bottom:15px; }
+    .stay-icon { display:grid; place-items:center; width:66px; height:66px; background:var(--pink); border:var(--line); border-radius:22px; transform:rotate(-5deg); flex:none; }
+    .osaka .stay-icon { background:var(--blue); }
+    .stay-icon .icon { width:42px; height:42px; }
+    .stay-city { margin:0; font-size:.84rem; font-weight:900; }
+    .stay-name { margin:0; font-size:1.18rem; line-height:1.34; overflow-wrap:anywhere; }
+    .stay-dates { display:flex; gap:9px; flex-wrap:wrap; margin:0 0 17px; }
+    .stay-address { font-size:.88rem; padding:13px 14px; background:var(--paper); border:2px solid var(--ink); border-radius:15px; }
+    .stay-address .tiny-label { display:block; margin-bottom:5px; font-size:.75rem; font-weight:900; color:#73665E; }
+    .stay-actions { display:flex; gap:9px; flex-wrap:wrap; margin-top:14px; }
+    .checklist-grid { display:grid; gap:19px; }
+    .checklist-card { padding:21px 19px; }
+    .checklist-head { display:flex; align-items:center; gap:10px; margin-bottom:6px; }
+    .checklist-head .icon { width:30px; height:30px; }
+    .checklist-head h3 { margin:0; font-size:1.14rem; }
+    .checklist-caption { margin:0 0 12px; color:#73665E; font-size:.83rem; }
+    .checklist-row { border-top:2px dashed #DED7C9; display:flex; align-items:flex-start; gap:10px; padding:12px 0; }
+    .checklist-row:last-child { padding-bottom:1px; }
+    .checklist-row .check-control { margin-top:0; }
+    .checklist-row label.item-text { cursor:pointer; font-size:.88rem; font-weight:800; flex:1; line-height:1.6; }
+    .checklist-row.is-done label.item-text { text-decoration:line-through; color:#7B8272; }
+    .progress-heading { display:flex; justify-content:space-between; align-items:center; gap:15px; margin-bottom:15px; flex-wrap:wrap; }
+    .progress-heading p { font-size:.88rem; margin:0; font-weight:800; }
+    .progress-heading strong { display:inline-block; padding:4px 12px; border:2px solid var(--ink); border-radius:100px; background:var(--green); }
+    .packing-grid { display:grid; gap:19px; }
+    .pack-card { padding:19px 19px 17px; }
+    .pack-card:nth-child(4n+1) { border-top:10px solid var(--pink); } .pack-card:nth-child(4n+2) { border-top:10px solid var(--yellow); } .pack-card:nth-child(4n+3) { border-top:10px solid var(--blue); } .pack-card:nth-child(4n+4) { border-top:10px solid var(--green); }
+    .pack-card h3 { display:flex; align-items:center; gap:9px; margin:0 0 8px; font-size:1.06rem; }
+    .pack-card h3 .icon { width:25px; height:25px; }
+    .pack-card .checklist-row { padding:10px 0; }
+    .custom-pack { margin-top:20px; padding:21px 19px; background:var(--soft-green); }
+    .custom-pack h3 { margin:0 0 5px; font-size:1.06rem; }
+    .custom-pack p { margin:0 0 13px; font-size:.85rem; }
+    .add-pack-form { display:flex; flex-wrap:wrap; gap:9px; }
+    .add-pack-form input { flex:1; min-width:160px; width:100%; background:var(--white); border:2px solid var(--ink); border-radius:13px; padding:9px 12px; }
+    .custom-pack-list:empty { display:none; }
+    .custom-pack-list .checklist-row { border-color:#C3D4B8; }
+    .remove-item { border:2px solid var(--ink); background:var(--soft-pink); font-size:.7rem; font-weight:900; border-radius:10px; padding:3px 8px; cursor:pointer; }
+    .packing-alert { background:var(--soft-yellow); border:2px dashed var(--ink); border-radius:16px; padding:13px 15px; font-size:.87rem; margin-top:16px; }
+    .footer { margin-top:48px; border-top:var(--line); background:var(--soft-pink); padding:28px 0 40px; }
+    .footer-layout { display:flex; flex-direction:column; align-items:flex-start; gap:15px; }
+    .footer p { margin:0; font-size:.83rem; max-width:60em; }
+    .footer-title { font-size:1.35rem; font-weight:900; margin-bottom:5px !important; }
+    .footer-actions { display:flex; gap:8px; flex-wrap:wrap; }
+    .back-top { position:fixed; right:18px; bottom:calc(18px + env(safe-area-inset-bottom, 0px)); width:47px; height:47px; z-index:20; border:var(--line); border-radius:15px; background:var(--yellow); display:grid; place-items:center; cursor:pointer; box-shadow:3px 3px 0 var(--ink); opacity:0; pointer-events:none; transform:translateY(15px); transition:opacity .2s,transform .2s; }
+    .back-top.visible { opacity:1; pointer-events:auto; transform:translateY(0); }
+    .back-top .icon { transform:rotate(-90deg); }
+    .toast { position:fixed; bottom:calc(76px + env(safe-area-inset-bottom, 0px)); left:50%; transform:translate(-50%,18px); z-index:70; border:var(--line); border-radius:14px; background:var(--white); box-shadow:4px 4px 0 var(--ink); padding:9px 17px; white-space:nowrap; max-width:calc(100% - 24px); font-size:.85rem; font-weight:900; opacity:0; pointer-events:none; transition:opacity .2s ease, transform .2s ease; }
+    .toast.visible { opacity:1; transform:translate(-50%,0); }
+    @keyframes floatSlow { 0%, 100% {transform:translateY(0px)} 50% {transform:translateY(-9px)} }
+    @keyframes floatMedium { 0%,100% {transform:translate(0,0)} 50% {transform:translate(5px,-7px)} }
+    @keyframes sway { 0%,100% {transform:rotate(0deg)} 50% {transform:rotate(5deg)} }
+    @keyframes pageBounce { 0% {opacity:0;transform:translateY(14px) scale(.98)} 60% {opacity:1;transform:translateY(-3px) scale(1.005)} 100% {opacity:1;transform:translateY(0) scale(1)} }
+    @media (min-width: 580px) {
+      .shell { width:min(1160px,calc(100% - 52px)); }
+      .hero-copy { padding:41px 38px 28px; }
+      .hero-art { min-height:350px; }
+      .quick-strip { grid-template-columns:repeat(4,minmax(0,1fr)); }
+      .flight-card { padding:25px; }
+      .timeline-list::before { left:119px; }
+      .timeline-item { grid-template-columns:105px minmax(0,1fr); gap:28px; }
+      .timeline-dot { left:110px; }
+      .timeline-time { font-size:.86rem; }
+      .timeline-content { padding:16px 17px; }
+      .day-cover { grid-template-columns:1fr 135px; align-items:center; }
+      .stay-card { padding:25px; }
+      .flight-middle { width:108px; }
+    }
+    @media (min-width: 830px) {
+      :root { --header-height:79px; }
+      .header-inner { min-height:71px; flex-wrap:nowrap; }
+      .site-nav { margin-left:auto; padding:0; flex:0 1 auto; }
+      .site-nav a { font-size:.88rem; padding:6px 12px; }
+      .header-note { display:none; }
+      .hero-card { grid-template-columns:1fr 1fr; min-height:565px; align-items:center; }
+      .hero-copy { padding:42px 0 48px 47px; }
+      .hero-art { min-height:100%; justify-content:center; }
+      .hero-art svg { max-height:470px; }
+      .section { padding-top:66px; }
+      .flight-grid, .stay-grid, .checklist-grid, .packing-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+      .itinerary-board { grid-template-columns: .83fr 1.5fr; align-items:start; }
+      .day-cover { display:flex; flex-direction:column; align-items:stretch; min-height:485px; padding:30px 27px; position:sticky; top:102px; }
+      .day-heading { font-size:1.85rem; }
+      .day-art-sticker { margin-top:auto; width:177px; height:158px; align-self:center; }
+      .day-art-sticker::before { width:195px; height:175px; }
+      .day-art-sticker .icon { width:110px; height:110px; }
+      .timeline-card { padding:25px 24px 26px; }
+      .quick-stat { padding:15px; }
+      .footer-layout { flex-direction:row; justify-content:space-between; align-items:center; }
+    }
+    @media (min-width: 1020px) { .flight-card { padding:30px 29px 25px; } .flight-middle { width:140px; } .airport-time { font-size:2.25rem; } }
+    @media (max-width: 360px) { .header-note { display:none; } .site-nav a { padding-inline:7px; } .flight-middle { width:50px; } .flight-middle svg { width:28px; } .timeline-item { gap:23px; } .timeline-list::before { left:87px; } .timeline-dot { left:78px; } .timeline-item { grid-template-columns:76px minmax(0,1fr); } .timeline-tags { margin-left:0; } }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior:auto; }
+      *, *::before, *::after { animation:none !important; transition:none !important; scroll-behavior:auto !important; }
+      .day-tab[aria-selected="true"] { transform:none; }
+    }
+
+    /* 預先輸出完整行程，不依賴 JS：iOS 檔案預覽也能看到每日內容。 */
+    .preview-hint { padding:12px 15px; margin-top:15px; background:var(--soft-yellow); border:2px dashed var(--ink); border-radius:16px; font-size:.81rem; font-weight:800; line-height:1.65; }
+    .static-day-entry { margin-bottom:17px; scroll-margin-top:150px; }
+    .static-day-entry > summary { cursor:pointer; list-style:none; display:flex; align-items:center; justify-content:space-between; padding:15px 18px; border:3px solid var(--ink); border-radius:19px; background:var(--soft-pink); font-weight:900; }
+    .static-day-entry:nth-of-type(4n+2) > summary { background:var(--soft-green); }
+    .static-day-entry:nth-of-type(4n+3) > summary { background:var(--soft-blue); }
+    .static-day-entry:nth-of-type(4n+4) > summary { background:var(--soft-yellow); }
+    .static-day-entry > summary::-webkit-details-marker { display:none; }
+    .static-day-entry > summary::after { content:'⌄'; font-size:1.3rem; }
+    .static-day-entry[open] > summary::after { content:'⌃'; }
+    .static-day-body { border:3px solid var(--ink); border-top:0; border-radius:0 0 24px 24px; padding:17px 13px 20px; background:#fff; }
+    .static-day-entry[open] > summary { border-radius:19px 19px 0 0; }
+    .static-date-link { display:flex; flex-direction:column; line-height:1.35; text-align:center; text-decoration:none; }
+    .static-date-link .day-tiny {font-size:.68rem;}
+    .static-date-link .day-date {font-size:1.02rem;}
+    .static-stop { display:flex; gap:12px; padding:13px 8px; border-top:2px dashed #e3dbcf; }
+    .static-stop:first-of-type { border-top:0; }
+    .static-stop-time { flex:0 0 72px; font-size:.81rem; font-weight:900; padding-top:3px; }
+    .static-stop-title { margin:0 0 5px; font-weight:900; }
+    .static-stop-desc { font-size:.8rem; color:#645e59; margin:3px 0 8px; }
+    .static-stop-tags { display:flex; gap:5px; flex-wrap:wrap; }
+    .static-check { width:22px; height:22px; accent-color:#B9DAA5; vertical-align:middle; margin:0 6px 0 0; }
+    .static-day-intro { font-size:.84rem; padding:0 8px 10px; font-weight:700; }
+    .static-day-tip { background:var(--soft-yellow); border:2px dashed var(--ink); padding:10px 12px; border-radius:14px; margin:14px 4px 0; font-size:.82rem; }
+    @media (max-width: 440px) { .static-stop-time { flex-basis:60px; } .static-day-entry {scroll-margin-top:138px;} }
+
+  /* 實景照片：放在行程卡片中，保留日系繪本的框線與柔和色塊。 */
+  .spot-photo { position:relative; margin:13px 0 2px; border:2px solid var(--ink); border-radius:17px; overflow:hidden; background:var(--soft-blue); }
+  .spot-photo > a { display:block; position:relative; text-decoration:none; }
+  .spot-photo img { display:block; width:100%; height:clamp(150px, 44vw, 245px); object-fit:cover; object-position:center; background:var(--soft-green); }
+  .spot-photo figcaption { display:flex; justify-content:space-between; align-items:center; gap:8px; padding:8px 12px 9px; background:var(--paper); font-size:.76rem; font-weight:900; line-height:1.45; }
+  .spot-photo figcaption .photo-source { flex:none; color:#8C6359; text-decoration:underline; text-underline-offset:3px; font-size:.69rem; }
+  .spot-photo .photo-offline { display:block; text-align:center; padding:5px 8px; background:var(--soft-yellow); color:#806B60; font-size:.68rem; }
+  .photo-head-note { display:flex; flex-wrap:wrap; align-items:center; gap:9px; padding:10px 13px; margin: 0 0 16px; border:2px dashed var(--ink); border-radius:15px; background:var(--soft-yellow); font-size:.78rem; font-weight:700; }
+  .photo-head-note strong { white-space:nowrap; }
+  .photo-credits { margin-top:20px; border:2px solid var(--ink); border-radius:19px; background:#fff; overflow:hidden; }
+  .photo-credits summary { cursor:pointer; padding:11px 15px; background:var(--soft-blue); font-size:.89rem; font-weight:900; }
+  .photo-credits .credits-inner { padding:12px 15px; }
+  .photo-credits p { margin:0 0 8px; font-size:.77rem; }
+  .photo-credits ul { padding-left:19px; margin:8px 0 0; }
+  .photo-credits li { font-size:.76rem; line-height:1.65; margin-bottom:6px; overflow-wrap:anywhere; }
+  .photo-credits a { text-underline-offset:3px; }
+  .spot-photo img:hover { transform:scale(1.015); }
+  @media (prefers-reduced-motion: reduce) { .spot-photo img:hover { transform:none; } }
+  @media (min-width:800px) { .spot-photo img { height:265px; } }
+  .static-stop > div:last-child { min-width:0; flex:1; }
+  
+  </style>
+</head>
+<body>
+<a class="skip-link" href="#main">跳至主要內容</a>
+<!-- 手繪插畫為內建 SVG；景點真實照片取自 Wikimedia Commons，需要網路才能載入，來源與授權列於行程下方。 -->
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true">
+  <defs>
+    <symbol id="i-plane" viewBox="0 0 64 64"><path d="M7 34 27 29 34 8q2-5 6-2l5 3-5 21 15 10q3 3-1 5l-5 2-16-8-9 11-7 1 4-16-13 5-5-3z" fill="#F2A497" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/><path d="m37 13 6 2" stroke="#3E3A39" stroke-width="2.5" stroke-linecap="round"/></symbol>
+    <symbol id="i-maple" viewBox="0 0 64 64"><path d="M31 4 38 18l9-7-1 12 13 3-10 9 4 10-15-4-6 14-4-14-15 5 5-12L5 26l14-3-2-12 10 7z" fill="#F2A497" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/><path d="m32 40-1 21" stroke="#3E3A39" stroke-width="3" stroke-linecap="round"/></symbol>
+    <symbol id="i-star" viewBox="0 0 64 64"><path d="m32 5 7.5 17.5L59 31l-19.5 8.5L32 59l-8-19.5L5 31l19-8.5z" fill="#F6D27A" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 64 64"><rect x="7" y="12" width="50" height="45" rx="9" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3"/><path d="M7 26h50M19 7v12M45 7v12" stroke="#3E3A39" stroke-width="3" stroke-linecap="round"/><path d="M20 38h8v8h-8zm16 0h8v8h-8z" fill="#F2A497"/></symbol>
+    <symbol id="i-suitcase" viewBox="0 0 64 64"><rect x="11" y="19" width="42" height="36" rx="7" fill="#F2A497" stroke="#3E3A39" stroke-width="3"/><path d="M24 19v-7a4 4 0 0 1 4-4h9a4 4 0 0 1 4 4v7M21 27v20m22-20v20" fill="none" stroke="#3E3A39" stroke-width="3" stroke-linecap="round"/><circle cx="20" cy="57" r="3" fill="#3E3A39"/><circle cx="44" cy="57" r="3" fill="#3E3A39"/></symbol>
+    <symbol id="i-train" viewBox="0 0 64 64"><rect x="12" y="7" width="40" height="47" rx="12" fill="#A8D3E6" stroke="#3E3A39" stroke-width="3"/><rect x="19" y="17" width="26" height="17" rx="3" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.5"/><path d="M19 45h6m14 0h6M20 53l-5 7m29-7 5 7" stroke="#3E3A39" stroke-width="3" stroke-linecap="round"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6" fill="none" stroke="#3E3A39" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-7-7 7 7-7 7" fill="none" stroke="#3E3A39" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 64 64"><path d="M32 58S12 39 12 25a20 20 0 0 1 40 0C52 39 32 58 32 58Z" fill="#F2A497" stroke="#3E3A39" stroke-width="3"/><circle cx="32" cy="25" r="8" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3"/></symbol>
+    <symbol id="i-note" viewBox="0 0 64 64"><path d="M15 6h34v44l-10 9H15a7 7 0 0 1-7-7V13a7 7 0 0 1 7-7Z" fill="#F6D27A" stroke="#3E3A39" stroke-width="3"/><path d="M38 59V49h11M18 22h21M18 32h22M18 42h15" fill="none" stroke="#3E3A39" stroke-width="3" stroke-linecap="round"/></symbol>
+    <symbol id="i-hotel" viewBox="0 0 64 64"><path d="M10 57V14l22-9 22 9v43" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/><rect x="24" y="39" width="16" height="18" rx="2" fill="#F2A497" stroke="#3E3A39" stroke-width="3"/><path d="M20 19h6v6h-6zm18 0h6v6h-6zM20 30h6v5h-6zm18 0h6v5h-6z" fill="#A8D3E6"/><path d="M5 57h54" stroke="#3E3A39" stroke-width="3" stroke-linecap="round"/></symbol>
+    <symbol id="i-hut" viewBox="0 0 64 64"><path d="M7 30 32 6l25 24-6 3-19-9-19 9z" fill="#F6D27A" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/><path d="M13 29 32 21l19 8v27H13z" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/><path d="M25 56V37h14v19" fill="#A8D3E6" stroke="#3E3A39" stroke-width="3"/><path d="M6 56h52" stroke="#3E3A39" stroke-width="3" stroke-linecap="round"/><path d="m13 24 19-14 19 14" stroke="#3E3A39" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-pagoda" viewBox="0 0 64 64"><path d="M17 24h30v32H17z" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3"/><path d="M8 24 32 12l24 12H8ZM12 39l20-11 20 11H12Zm-1 14 21-10 21 10H11Z" fill="#F2A497" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/><path d="M25 24v-7m14 7v-7M28 56v-9h8v9M32 12V5M8 58h48" stroke="#3E3A39" stroke-width="3" stroke-linecap="round"/></symbol>
+    <symbol id="i-castle" viewBox="0 0 64 64"><path d="M10 53h44v6H10zM15 27h34v26H15z" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3"/><path d="M10 27 32 12l22 15H10ZM16 41l16-9 16 9H16Z" fill="#B9DAA5" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/><path d="M24 12V7h16v5M20 31h5v5h-5zm19 0h5v5h-5zM28 44h8v9h-8" fill="#F6D27A" stroke="#3E3A39" stroke-width="2.5"/><path d="M32 5V2" stroke="#3E3A39" stroke-width="3" stroke-linecap="round"/></symbol>
+    <symbol id="i-torii" viewBox="0 0 64 64"><path d="M12 17v40m40-40v40M7 12h50l-3 7H10zm1 14h48v6H8z" fill="#F2A497" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/><path d="M5 58h54" stroke="#3E3A39" stroke-width="3" stroke-linecap="round"/></symbol>
+    <symbol id="i-matcha" viewBox="0 0 64 64"><path d="M7 28q0 27 25 27t25-27Z" fill="#B9DAA5" stroke="#3E3A39" stroke-width="3"/><ellipse cx="32" cy="28" rx="25" ry="9" fill="#8FC39C" stroke="#3E3A39" stroke-width="3"/><path d="M19 56h26M23 7q-7 6 0 12m10-15q-7 7 0 14m11-11q-7 6 0 12" fill="none" stroke="#3E3A39" stroke-width="3" stroke-linecap="round"/></symbol>
+    <symbol id="i-shop" viewBox="0 0 64 64"><path d="M11 23h42v34H11z" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3"/><path d="M8 18 15 7h34l7 11v10H8z" fill="#F2A497" stroke="#3E3A39" stroke-width="3"/><path d="M19 18v10m13-10v10m13-10v10" stroke="#3E3A39" stroke-width="2.5"/><path d="M19 57V38h14v19M40 38h8v10h-8" fill="#A8D3E6" stroke="#3E3A39" stroke-width="3"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 64 64"><path d="M32 55 10 34C-4 19 13-1 29 16l3 4 3-4C51-1 68 19 54 34Z" fill="#F2A497" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/></symbol>
+    <symbol id="i-camera" viewBox="0 0 64 64"><path d="M8 20h12l6-8h12l6 8h12v33H8z" fill="#F6D27A" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/><circle cx="32" cy="36" r="12" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3"/><circle cx="49" cy="27" r="2" fill="#3E3A39"/></symbol>
+    <symbol id="i-list" viewBox="0 0 64 64"><rect x="10" y="8" width="44" height="50" rx="5" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3"/><path d="m18 22 4 4 7-8m-11 25 4 4 7-8M35 23h12M35 44h12" fill="none" stroke="#3E3A39" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+
+<header class="site-header" id="top">
+  <div class="header-inner shell">
+    <a class="brand" href="#home" aria-label="京都大阪秋日手帳，返回首頁"><span class="brand-mark"><svg class="icon" aria-hidden="true"><use href="#i-maple"/></svg></span>秋日旅行手帳 ♡</a>
+    <span class="header-note">KYOTO ✿ OSAKA</span>
+    <nav class="site-nav" aria-label="網站主要導覽">
+      <a href="#home" aria-current="true">首頁</a>
+      <a href="#flights">航班資訊</a>
+      <a href="#schedule">每日行程</a>
+      <a href="#hotels">住宿</a>
+      <a href="#before-trip">出發準備</a>
+      <a href="#packing">行李清單</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section id="home" class="hero shell" aria-labelledby="heroTitle">
+    <div class="hero-card">
+      <div class="hero-copy">
+        <div class="hero-kicker"><svg class="icon" aria-hidden="true"><use href="#i-maple"/></svg> 2026 · AUTUMN TRIP DIARY</div>
+        <h1 id="heroTitle" class="hero-title">京都<span class="highlight">大阪</span><br>之旅 ♡</h1>
+        <p class="hero-description">跟著秋天的腳步去散步！收藏古都的楓葉、可愛小店，還有大阪閃閃發亮的回憶。</p>
+        <div class="hero-pills"><span class="pill pink">11/28（六）— 12/5（六）</span><span class="pill yellow">8 天 7 夜</span><span class="pill green">Peach 樂桃航空</span></div>
+        <div class="hero-buttons"><a href="#schedule" class="button primary">打開每日行程 <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a><a href="#packing" class="button soft">先收行李 <svg class="icon" aria-hidden="true"><use href="#i-suitcase"/></svg></a></div>
+      </div>
+      <div class="hero-art">
+        <svg viewBox="0 0 620 460" role="img" aria-label="手繪秋日京都五重塔、大阪城、楓葉、鳥居與飛機的日系繪本風插畫">
+          <g class="float-medium">
+            <path d="M92 83c-20-18-49-1-41 23-21 0-21 29 0 31h107c27-1 30-36 4-39-7-25-37-33-52-11z" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3"/>
+            <path d="M410 57c-18-19-43-8-44 13-21-4-27 27-3 31h111c29-1 32-33 7-39-9-23-36-30-51-12z" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3"/>
+          </g>
+          <g transform="translate(215 39) rotate(-10)" class="float-slow">
+            <path d="m4 23 76-6 27-11q15-3 17 4l2 11-43 13-69 8-6 9-13-1 8-20-16 2-10-9z" fill="#F2A497" stroke="#3E3A39" stroke-width="3.5" stroke-linejoin="round"/>
+            <path d="m48 24 5-19 24-4-12 22M63 32l14 20-19 2-20-18" fill="#FFF6ED" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/>
+            <circle cx="103" cy="18" r="3.5" fill="#3E3A39"/>
+          </g>
+          <g><path d="M17 322C85 256 153 275 207 320 277 269 363 274 409 317c53-44 138-29 189 13v98H17z" fill="#B9DAA5" stroke="#3E3A39" stroke-width="3"/><path d="M0 387c101-25 147-4 209 2 92 9 126-24 213-25 76-1 148 21 198 10v84H0Z" fill="#A8D3E6" stroke="#3E3A39" stroke-width="3"/></g>
+          <g transform="translate(61 95)">
+            <path d="M55 45V14m-4 8 4-12 4 12" stroke="#3E3A39" stroke-width="3" stroke-linecap="round"/>
+            <rect x="27" y="109" width="58" height="144" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3"/>
+            <rect x="36" y="56" width="39" height="56" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3"/>
+            <path d="m10 82 46-27 46 27-6 9H16Zm-5 54 51-28 51 28-8 9H12Zm-13 54 64-34 64 34-8 10H0Zm-17 61 81-40 81 40-8 12H-17Z" fill="#F2A497" stroke="#3E3A39" stroke-width="3.5" stroke-linejoin="round"/>
+            <path d="M48 87h16v16H48zm-7 56h30v15H41zm-1 48h32v18H40zm5 39h22v23H45z" fill="#F6D27A" stroke="#3E3A39" stroke-width="2.5"/>
+          </g>
+          <g transform="translate(392 117)">
+            <path d="M14 218h173v24H14z" fill="#F2A497" stroke="#3E3A39" stroke-width="3"/>
+            <path d="M33 101h137v117H33z" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3"/>
+            <path d="M50 56h103v49H50z" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3"/>
+            <path d="M68 20h67v37H68z" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3"/>
+            <path d="m51 20 51-22 51 22-7 12H58Zm-15 44 66-28 66 28-9 12H45Zm-19 61 85-36 85 36-10 15H27Z" fill="#B9DAA5" stroke="#3E3A39" stroke-width="3.5" stroke-linejoin="round"/>
+            <path d="M95 2v-15m-6 4 6-8 6 8" stroke="#B47D2B" stroke-width="4" stroke-linecap="round"/>
+            <path d="M90 27h24v22H90zM91 70h24v18H91zM50 147h20v28H50zm45 0h20v28H95zm44 0h20v28h-20zM89 186h27v32H89z" fill="#F6D27A" stroke="#3E3A39" stroke-width="2.5"/>
+          </g>
+          <g transform="translate(294 252)">
+            <path d="M26 44v103m82-103v103M9 33h117l-10 15H19Zm5 26h107v13H14Z" fill="#F2A497" stroke="#3E3A39" stroke-width="4" stroke-linejoin="round"/>
+            <path d="M2 148h137" stroke="#3E3A39" stroke-width="4" stroke-linecap="round"/>
+          </g>
+          <g class="sway" transform="translate(208 284)">
+            <path d="M26 95 28 25" stroke="#3E3A39" stroke-width="7" stroke-linecap="round"/>
+            <path d="M26 26 8 16l17-10 14 13 17-8-3 24 20 9-20 13-9 25-15-17L9 72l3-21-22-12 23-7z" fill="#F2A497" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/>
+            <path d="M28 49 48 35M28 49 8 43M28 49 33 72" stroke="#3E3A39" stroke-width="2" stroke-linecap="round"/>
+          </g>
+          <g transform="translate(50 365)">
+            <path d="M0 52c24-34 55-34 82 0" fill="#B9DAA5" stroke="#3E3A39" stroke-width="3"/><circle cx="22" cy="25" r="16" fill="#B9DAA5" stroke="#3E3A39" stroke-width="3"/><circle cx="52" cy="17" r="22" fill="#B9DAA5" stroke="#3E3A39" stroke-width="3"/><circle cx="73" cy="34" r="16" fill="#B9DAA5" stroke="#3E3A39" stroke-width="3"/>
+          </g>
+          <g transform="translate(268 374)"><path d="M0 36q41-38 85 0" fill="none" stroke="#3E3A39" stroke-width="10" stroke-linecap="round"/><path d="M0 36q41-38 85 0" fill="none" stroke="#B47D68" stroke-width="5" stroke-linecap="round"/><path d="M8 15v29m18-44v42m25-40v40m25-28v30" stroke="#3E3A39" stroke-width="3"/></g>
+          <g transform="translate(524 366)"><circle cx="27" cy="28" r="29" fill="#F6D27A" stroke="#3E3A39" stroke-width="3"/><circle cx="17" cy="25" r="3" fill="#3E3A39"/><circle cx="37" cy="25" r="3" fill="#3E3A39"/><path d="M20 37q7 7 15 0" fill="none" stroke="#3E3A39" stroke-width="3" stroke-linecap="round"/><circle cx="10" cy="33" r="5" fill="#F2A497"/><circle cx="44" cy="33" r="5" fill="#F2A497"/></g>
+          <g fill="#F2A497" stroke="#3E3A39" stroke-width="2"><path d="m18 205 7 6-1 9 8-5 7 5-2-10 5-5-10-2-6-9-2 9z"/><path d="m339 114 7 6-1 9 8-5 7 5-2-10 5-5-10-2-6-9-2 9z"/><path d="m574 80 7 6-1 9 8-5 7 5-2-10 5-5-10-2-6-9-2 9z"/></g>
+          <g stroke="#3E3A39" stroke-width="2.4" stroke-linecap="round"><path d="M40 182v14M33 189h14M364 67v12m-6-6h12M595 263v15m-7-8h14"/></g>
+        </svg>
+        <p class="hero-art-caption">♡ Kyoto & Osaka · 2026 ♡</p>
+      </div>
+    </div>
+    <div class="quick-strip" aria-label="旅程摘要">
+      <div class="quick-stat"><span class="stat-emoji"><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg></span><div><p class="stat-label">旅行天數</p><p class="stat-main">8 天 7 夜</p></div></div>
+      <div class="quick-stat"><span class="stat-emoji"><svg class="icon" aria-hidden="true"><use href="#i-torii"/></svg></span><div><p class="stat-label">前半段</p><p class="stat-main">京都 · 4 晚</p></div></div>
+      <div class="quick-stat"><span class="stat-emoji"><svg class="icon" aria-hidden="true"><use href="#i-castle"/></svg></span><div><p class="stat-label">後半段</p><p class="stat-main">大阪 · 3 晚</p></div></div>
+      <div class="quick-stat"><span class="stat-emoji"><svg class="icon" aria-hidden="true"><use href="#i-list"/></svg></span><div><p class="stat-label">行程打卡</p><p class="stat-main" id="totalDone">0 / 35 完成</p></div></div>
+    </div>
+  </section>
+
+  <section class="section shell" id="flights" aria-labelledby="flightTitle">
+    <div class="section-heading"><div class="section-icon" style="background:var(--blue)"><svg aria-hidden="true"><use href="#i-plane"/></svg></div><div><p class="eyebrow">01 · FLY AWAY</p><h2 class="section-title" id="flightTitle">搭上樂桃，出發！</h2><p class="section-sub">依照提供的機票圖片整理 · 時間皆為當地時間</p></div></div>
+    <div class="flight-grid">
+      <article class="ink-card flight-card" aria-label="去程航班資訊">
+        <div class="flight-top"><span class="pill pink"><svg class="icon sm" aria-hidden="true"><use href="#i-calendar"/></svg>去程 · 11/28（六）</span><span class="airline"><svg class="icon" aria-hidden="true"><use href="#i-plane"/></svg>Peach · MM032</span></div>
+        <div class="flight-route"><div class="airport"><div class="airport-code">KHH</div><div class="airport-time">14:20</div><div class="airport-city">高雄國際機場</div></div><div class="flight-middle"><svg aria-hidden="true"><use href="#i-plane"/></svg><span class="flight-dash"></span><span style="font-size:.66rem;font-weight:900">飛往日本 ♡</span></div><div class="airport"><div class="airport-code">KIX</div><div class="airport-time">18:05</div><div class="airport-city">關西國際機場</div></div></div>
+        <div class="flight-bottom"><span>✈ 機型：A320</span><span>台灣 → 日本</span><span>日本時間快 1 小時</span></div>
+      </article>
+      <article class="ink-card flight-card return" aria-label="回程航班資訊">
+        <div class="flight-top"><span class="pill blue"><svg class="icon sm" aria-hidden="true"><use href="#i-calendar"/></svg>回程 · 12/05（六）</span><span class="airline"><svg class="icon" aria-hidden="true"><use href="#i-plane"/></svg>Peach · MM031</span></div>
+        <div class="flight-route"><div class="airport"><div class="airport-code">KIX</div><div class="airport-time">10:35</div><div class="airport-city">關西國際機場</div></div><div class="flight-middle"><svg aria-hidden="true"><use href="#i-plane"/></svg><span class="flight-dash"></span><span style="font-size:.66rem;font-weight:900">回到台灣 ♡</span></div><div class="airport"><div class="airport-code">KHH</div><div class="airport-time">13:20</div><div class="airport-city">高雄國際機場</div></div></div>
+        <div class="flight-bottom"><span>✈ 機型：A320</span><span>關西機場：第 2 航廈（依圖片）</span><span>日本 → 台灣</span></div>
+      </article>
+    </div>
+    <aside class="flight-note"><svg class="icon" aria-hidden="true"><use href="#i-note"/></svg><p><strong>登機小提醒：</strong>去程抵達日本已是傍晚；12/5 回程班機為上午 10:35，記得預留大阪市區往機場的交通與報到時間。航廈、班機及報到資訊以出發前最新電子機票與航空公司公告為準。</p></aside>
+  </section>
+
+  <section class="section shell" id="schedule" aria-labelledby="scheduleTitle">
+    <div class="section-heading"><div class="section-icon" style="background:var(--pink)"><svg aria-hidden="true"><use href="#i-maple"/></svg></div><div><p class="eyebrow">02 · OUR LITTLE JOURNEY</p><h2 class="section-title" id="scheduleTitle">每天都是小冒險</h2><p class="section-sub">真實景點照片 × 繪本風時間軸，走過的景點還能打勾 ♡</p></div></div>
+    <div class="photo-head-note"><strong>📸 旅途風景相簿</strong> 景點卡片加入真實實景照；照片為過往拍攝，實際楓葉與銀杏狀況以旅行當天為準。需要連網才能看到照片。</div>
+    <div class="day-bar"><div class="day-tabs" id="dayTabs" role="tablist" aria-label="選擇旅行日期"><a class="day-tab static-date-link" href="#static-day-1"><span class="day-tiny">DAY 1</span><span class="day-date">11/28（六）</span></a><a class="day-tab static-date-link" href="#static-day-2"><span class="day-tiny">DAY 2</span><span class="day-date">11/29（日）</span></a><a class="day-tab static-date-link" href="#static-day-3"><span class="day-tiny">DAY 3</span><span class="day-date">11/30（一）</span></a><a class="day-tab static-date-link" href="#static-day-4"><span class="day-tiny">DAY 4</span><span class="day-date">12/01（二）</span></a><a class="day-tab static-date-link" href="#static-day-5"><span class="day-tiny">DAY 5</span><span class="day-date">12/02（三）</span></a><a class="day-tab static-date-link" href="#static-day-6"><span class="day-tiny">DAY 6</span><span class="day-date">12/03（四）</span></a><a class="day-tab static-date-link" href="#static-day-7"><span class="day-tiny">DAY 7</span><span class="day-date">12/04（五）</span></a><a class="day-tab static-date-link" href="#static-day-8"><span class="day-tiny">DAY 8</span><span class="day-date">12/05（六）</span></a></div></div>
+    <div id="schedulePreviewHelp" class="preview-hint">♡ 8 天行程與景點照片卡已完整顯示！照片需連上網路；目前若是 iPhone 的「檔案預覽」，日期按鈕會帶你跳到當天；用 Safari／Chrome 開啟則可直接切換日期、保留打勾紀錄。</div>
+    <div aria-label="所選日期的旅行行程" aria-live="polite" id="dayPanel" role="tabpanel"><details class="static-day-entry" id="static-day-1" open=""><summary><span>Day 1 · 11/28（六）</span><span>飛向京都的第一天</span></summary><div class="static-day-body"><p class="static-day-intro">高雄出發！先抵達京都、安頓行李，再用一頓晚餐開啟旅行。</p><article class="static-stop"><div class="static-stop-time">14:20</div><div><p class="static-stop-title"><input aria-label="完成：高雄機場起飛" class="static-check" type="checkbox"/>高雄機場起飛</p><p class="static-stop-desc">Peach MM032 · 前往關西國際機場。</p><div class="static-stop-tags"><span class="tag air">飛機</span></div></div></article><article class="static-stop"><div class="static-stop-time">18:05</div><div><p class="static-stop-title"><input aria-label="完成：抵達關西國際機場" class="static-check" type="checkbox"/>抵達關西國際機場</p><p class="static-stop-desc">入境、領取行李，準備前往京都。</p><div class="static-stop-tags"><span class="tag walk">步行</span></div></div></article><article class="static-stop"><div class="static-stop-time">抵達後</div><div><p class="static-stop-title"><input aria-label="完成：關西機場 → 京都" class="static-check" type="checkbox"/>關西機場 → 京都</p><p class="static-stop-desc">可確認 HARUKA 或其他適合的交通方式。</p><div class="static-stop-tags"><span class="tag rail">電車</span></div></div></article><article class="static-stop"><div class="static-stop-time">晚上</div><div><p class="static-stop-title"><input aria-label="完成：京都飯店 Check-in" class="static-check" type="checkbox"/>京都飯店 Check-in</p><p class="static-stop-desc">Smart Place Inn Kyoto Shijo Omiya Station。</p><div class="static-stop-tags"><span class="tag walk">步行</span><a class="map-inline" href="https://maps.app.goo.gl/YgXsPrcajHh9sup57?g_st=ic" rel="noopener noreferrer" target="_blank">地圖 ↗</a></div></div></article><article class="static-stop"><div class="static-stop-time">晚上</div><div><p class="static-stop-title"><input aria-label="完成：晚餐・京都第一夜" class="static-check" type="checkbox"/>晚餐・京都第一夜</p><p class="static-stop-desc">在飯店周邊找間喜歡的小店，吃飽休息！</p><div class="static-stop-tags"><span class="tag walk">步行</span></div></div></article><p class="static-day-tip"><strong>小提醒：</strong>航班 18:05 抵達關西機場（日本時間）；入境、領行李與前往京都都需要時間，晚餐保持彈性最舒服。</p></div></details><details class="static-day-entry" id="static-day-2" open=""><summary><span>Day 2 · 11/29（日）</span><span>美山茅草屋的一日散步</span></summary><div class="static-day-body"><p class="static-day-intro">走進彷彿童話的小村落，看茅草屋、山景，收藏慢慢走的好時光。</p><article class="static-stop"><div class="static-stop-time">上午</div><div><p class="static-stop-title"><input aria-label="完成：從京都前往美山" class="static-check" type="checkbox"/>從京都前往美山</p><p class="static-stop-desc">依選定路線搭乘交通工具，保留轉乘時間。</p><div class="static-stop-tags"><span class="tag bus">火車＋巴士</span></div></div></article><article class="static-stop"><div class="static-stop-time">白天</div><div><p class="static-stop-title"><input aria-label="完成：美山茅草屋之里" class="static-check" type="checkbox"/>美山茅草屋之里</p><p class="static-stop-desc">欣賞傳統茅葺屋頂與村落風光，慢慢拍照。</p><div class="static-stop-tags"><span class="tag walk">步行</span><span class="tag must">★ 必去</span><a class="map-inline" href="https://www.google.com/maps/search/?api=1&amp;query=美山かやぶきの里 京都" rel="noopener noreferrer" target="_blank">地圖 ↗</a></div><figure class="spot-photo"><a aria-label="看美山茅草屋之里原始照片與拍攝來源" href="https://commons.wikimedia.org/wiki/File:%E7%BE%8E%E5%B1%B1%E3%81%AE%E3%81%8B%E3%82%84%E3%81%B6%E3%81%8D%E3%81%AE%E9%87%8C_(Kayabuku-no-Sato_in_Miyama)_22_Jun%2C_2013_-_panoramio.jpg" rel="noopener noreferrer" target="_blank"><img alt="美山茅草屋聚落（過往拍攝的實景參考照，非 2026 年即時景況）" decoding="async" loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/%E7%BE%8E%E5%B1%B1%E3%81%AE%E3%81%8B%E3%82%84%E3%81%B6%E3%81%8D%E3%81%AE%E9%87%8C_(Kayabuku-no-Sato_in_Miyama)_22_Jun%2C_2013_-_panoramio.jpg/800px-%E7%BE%8E%E5%B1%B1%E3%81%AE%E3%81%8B%E3%82%84%E3%81%B6%E3%81%8D%E3%81%AE%E9%87%8C_(Kayabuku-no-Sato_in_Miyama)_22_Jun%2C_2013_-_panoramio.jpg"/></a><figcaption><span>📷 美山茅草屋聚落</span><a class="photo-source" href="https://commons.wikimedia.org/wiki/File:%E7%BE%8E%E5%B1%B1%E3%81%AE%E3%81%8B%E3%82%84%E3%81%B6%E3%81%8D%E3%81%AE%E9%87%8C_(Kayabuku-no-Sato_in_Miyama)_22_Jun%2C_2013_-_panoramio.jpg" rel="noopener noreferrer" target="_blank">照片來源 ↗</a></figcaption></figure></div></article><article class="static-stop"><div class="static-stop-time">中午</div><div><p class="static-stop-title"><input aria-label="完成：美山午餐小歇" class="static-check" type="checkbox"/>美山午餐小歇</p><p class="static-stop-desc">尋找在地餐點，補充體力。</p><div class="static-stop-tags"><span class="tag walk">步行</span><a class="map-inline" href="https://www.google.com/maps/search/?api=1&amp;query=美山かやぶきの里 飲食店" rel="noopener noreferrer" target="_blank">地圖 ↗</a></div></div></article><article class="static-stop"><div class="static-stop-time">午後</div><div><p class="static-stop-title"><input aria-label="完成：村落散步・風景紀錄" class="static-check" type="checkbox"/>村落散步・風景紀錄</p><p class="static-stop-desc">沿著小路繼續探索，不趕行程。</p><div class="static-stop-tags"><span class="tag walk">步行</span></div></div></article><article class="static-stop"><div class="static-stop-time">傍晚</div><div><p class="static-stop-title"><input aria-label="完成：返回京都市區" class="static-check" type="checkbox"/>返回京都市區</p><p class="static-stop-desc">依預先確認的回程車次返程。</p><div class="static-stop-tags"><span class="tag bus">火車＋巴士</span></div></div></article><p class="static-day-tip"><strong>小提醒：</strong>美山位於京都市區外，車程較長；若搭大眾運輸，記得事先確認巴士銜接、回程末班與天候。</p></div></details><details class="static-day-entry" id="static-day-3" open=""><summary><span>Day 3 · 11/30（一）</span><span>京都楓葉與古街散策</span></summary><div class="static-day-body"><p class="static-day-intro">早上先逛錦市場，再到東福寺賞楓；下午白天看清水寺，沿三年坂、二年坂散步。</p><article class="static-stop"><div class="static-stop-time">10:00–11:00</div><div><p class="static-stop-title"><input aria-label="完成：錦市場" class="static-check" type="checkbox"/>錦市場</p><p class="static-stop-desc">早上先吃京都特色小吃、逛小店；各店家開門時間不同。</p><div class="static-stop-tags"><span class="tag walk">步行</span><span class="tag must">★ 必去</span><a class="map-inline" href="https://www.google.com/maps/search/?api=1&amp;query=%E9%8C%A6%E5%B8%82%E5%A0%B4%20%E4%BA%AC%E9%83%BD" rel="noopener noreferrer" target="_blank">地圖 ↗</a></div><figure class="spot-photo"><a aria-label="看錦市場原始照片與拍攝來源" href="https://commons.wikimedia.org/wiki/File:A_view_of_Nishiki_Market%2C_Kyoto%2C_Japan.jpg" rel="noopener noreferrer" target="_blank"><img alt="錦市場的熱鬧街景（過往拍攝的實景參考照，非 2026 年即時景況）" decoding="async" loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/A_view_of_Nishiki_Market%2C_Kyoto%2C_Japan.jpg/800px-A_view_of_Nishiki_Market%2C_Kyoto%2C_Japan.jpg"/></a><figcaption><span>📷 錦市場的熱鬧街景</span><a class="photo-source" href="https://commons.wikimedia.org/wiki/File:A_view_of_Nishiki_Market%2C_Kyoto%2C_Japan.jpg" rel="noopener noreferrer" target="_blank">照片來源 ↗</a></figcaption></figure></div></article><article class="static-stop"><div class="static-stop-time">11:45–12:50</div><div><p class="static-stop-title"><input aria-label="完成：東福寺" class="static-check" type="checkbox"/>東福寺</p><p class="static-stop-desc">欣賞通天橋與寺院秋日楓葉，預留排隊時間。</p><div class="static-stop-tags"><span class="tag rail">電車＋步行</span><span class="tag must">★ 必去</span><a class="map-inline" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%9D%B1%E7%A6%8F%E5%AF%BA%20%E4%BA%AC%E9%83%BD" rel="noopener noreferrer" target="_blank">地圖 ↗</a></div><figure class="spot-photo"><a aria-label="看東福寺原始照片與拍攝來源" href="https://commons.wikimedia.org/wiki/File:Tofuku-ji%2C_Kyoto_-_Tofukuji6592.jpg" rel="noopener noreferrer" target="_blank"><img alt="東福寺與紅葉（過往拍攝的實景參考照，非 2026 年即時景況）" decoding="async" loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Tofuku-ji%2C_Kyoto_-_Tofukuji6592.jpg/800px-Tofuku-ji%2C_Kyoto_-_Tofukuji6592.jpg"/></a><figcaption><span>📷 東福寺與紅葉</span><a class="photo-source" href="https://commons.wikimedia.org/wiki/File:Tofuku-ji%2C_Kyoto_-_Tofukuji6592.jpg" rel="noopener noreferrer" target="_blank">照片來源 ↗</a></figcaption></figure></div></article><article class="static-stop"><div class="static-stop-time">13:50–15:10</div><div><p class="static-stop-title"><input aria-label="完成：清水寺" class="static-check" type="checkbox"/>清水寺</p><p class="static-stop-desc">安排白天參觀與拍攝楓葉、清水舞台。</p><div class="static-stop-tags"><span class="tag bus">大眾運輸＋步行</span><span class="tag must">★ 必去</span><a class="map-inline" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B8%85%E6%B0%B4%E5%AF%BA%20%E4%BA%AC%E9%83%BD" rel="noopener noreferrer" target="_blank">地圖 ↗</a></div><figure class="spot-photo"><a aria-label="看清水寺原始照片與拍攝來源" href="https://commons.wikimedia.org/wiki/File:Kiyomizu-dera%2C_Kyoto%2C_November_2016_-01.jpg" rel="noopener noreferrer" target="_blank"><img alt="清水寺與秋季楓葉（過往拍攝的實景參考照，非 2026 年即時景況）" decoding="async" loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Kiyomizu-dera%2C_Kyoto%2C_November_2016_-01.jpg/800px-Kiyomizu-dera%2C_Kyoto%2C_November_2016_-01.jpg"/></a><figcaption><span>📷 清水寺與秋季楓葉</span><a class="photo-source" href="https://commons.wikimedia.org/wiki/File:Kiyomizu-dera%2C_Kyoto%2C_November_2016_-01.jpg" rel="noopener noreferrer" target="_blank">照片來源 ↗</a></figcaption></figure></div></article><article class="static-stop"><div class="static-stop-time">15:10–15:45</div><div><p class="static-stop-title"><input aria-label="完成：三年坂" class="static-check" type="checkbox"/>三年坂</p><p class="static-stop-desc">從清水寺順著下山方向逛石板坡道與小店。</p><div class="static-stop-tags"><span class="tag walk">步行</span><a class="map-inline" href="https://www.google.com/maps/search/?api=1&amp;query=%E7%94%A3%E5%AF%A7%E5%9D%82%20%E4%BA%AC%E9%83%BD" rel="noopener noreferrer" target="_blank">地圖 ↗</a></div><figure class="spot-photo"><a aria-label="看三年坂原始照片與拍攝來源" href="https://commons.wikimedia.org/wiki/File:Sannenzaka-kyoto.JPG" rel="noopener noreferrer" target="_blank"><img alt="三年坂古街（過往拍攝的實景參考照，非 2026 年即時景況）" decoding="async" loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Sannenzaka-kyoto.JPG/800px-Sannenzaka-kyoto.JPG"/></a><figcaption><span>📷 三年坂古街</span><a class="photo-source" href="https://commons.wikimedia.org/wiki/File:Sannenzaka-kyoto.JPG" rel="noopener noreferrer" target="_blank">照片來源 ↗</a></figcaption></figure></div></article><article class="static-stop"><div class="static-stop-time">15:45–16:30</div><div><p class="static-stop-title"><input aria-label="完成：二年坂" class="static-check" type="checkbox"/>二年坂</p><p class="static-stop-desc">漫步京都古街、逛伴手禮小店。</p><div class="static-stop-tags"><span class="tag walk">步行</span><a class="map-inline" href="https://www.google.com/maps/search/?api=1&amp;query=%E4%BA%8C%E5%AF%A7%E5%9D%82%20%E4%BA%AC%E9%83%BD" rel="noopener noreferrer" target="_blank">地圖 ↗</a></div><figure class="spot-photo"><a aria-label="看二年坂原始照片與拍攝來源" href="https://commons.wikimedia.org/wiki/File:Ninenzaka.jpg" rel="noopener noreferrer" target="_blank"><img alt="二年坂石板街道（過往拍攝的實景參考照，非 2026 年即時景況）" decoding="async" loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Ninenzaka.jpg/800px-Ninenzaka.jpg"/></a><figcaption><span>📷 二年坂石板街道</span><a class="photo-source" href="https://commons.wikimedia.org/wiki/File:Ninenzaka.jpg" rel="noopener noreferrer" target="_blank">照片來源 ↗</a></figcaption></figure></div></article><p class="static-day-tip"><strong>小提醒：</strong>錦市場安排早上 10:00；清水寺以白天參觀為優先。賞楓旺季交通、排隊可能延誤，當日視情況調整停留時間。</p></div></details><details class="static-day-entry" id="static-day-4" open=""><summary><span>Day 4 · 12/01（二）</span><span>金色寺院與抹茶香</span></summary><div class="static-day-body"><p class="static-day-intro">走訪寺院、欣賞銀杏與秋色，最後找間抹茶店好好坐一下。</p><article class="static-stop"><div class="static-stop-time">上午</div><div><p class="static-stop-title"><input aria-label="完成：金閣寺" class="static-check" type="checkbox"/>金閣寺</p><p class="static-stop-desc">欣賞金色樓閣與庭園景觀。</p><div class="static-stop-tags"><span class="tag bus">巴士＋步行</span><span class="tag must">★ 必去</span><a class="map-inline" href="https://www.google.com/maps/search/?api=1&amp;query=金閣寺 京都" rel="noopener noreferrer" target="_blank">地圖 ↗</a></div><figure class="spot-photo"><a aria-label="看金閣寺原始照片與拍攝來源" href="https://commons.wikimedia.org/wiki/File:The_iconic_Golden_Pavilion_(%22Kinkaku-ji%22)%2C_Kyoto%2C_Japan.jpg" rel="noopener noreferrer" target="_blank"><img alt="金閣寺金色樓閣（過往拍攝的實景參考照，非 2026 年即時景況）" decoding="async" loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/The_iconic_Golden_Pavilion_(%22Kinkaku-ji%22)%2C_Kyoto%2C_Japan.jpg/800px-The_iconic_Golden_Pavilion_(%22Kinkaku-ji%22)%2C_Kyoto%2C_Japan.jpg"/></a><figcaption><span>📷 金閣寺金色樓閣</span><a class="photo-source" href="https://commons.wikimedia.org/wiki/File:The_iconic_Golden_Pavilion_(%22Kinkaku-ji%22)%2C_Kyoto%2C_Japan.jpg" rel="noopener noreferrer" target="_blank">照片來源 ↗</a></figcaption></figure></div></article><article class="static-stop"><div class="static-stop-time">中午前</div><div><p class="static-stop-title"><input aria-label="完成：慧光寺" class="static-check" type="checkbox"/>慧光寺</p><p class="static-stop-desc">感受京都寺院的靜謐氣氛。</p><div class="static-stop-tags"><span class="tag bus">大眾運輸</span><a class="map-inline" href="https://www.google.com/maps/search/?api=1&amp;query=慧光寺 京都" rel="noopener noreferrer" target="_blank">地圖 ↗</a></div></div></article><article class="static-stop"><div class="static-stop-time">午後</div><div><p class="static-stop-title"><input aria-label="完成：下鴨神社" class="static-check" type="checkbox"/>下鴨神社</p><p class="static-stop-desc">漫步神社周邊，尋找季節色彩。</p><div class="static-stop-tags"><span class="tag bus">大眾運輸＋步行</span><span class="tag must">★ 必去</span><a class="map-inline" href="https://www.google.com/maps/search/?api=1&amp;query=下鴨神社 京都" rel="noopener noreferrer" target="_blank">地圖 ↗</a></div><figure class="spot-photo"><a aria-label="看下鴨神社原始照片與拍攝來源" href="https://commons.wikimedia.org/wiki/File:Shimogamo_Shrine%2C_Kyoto.jpg" rel="noopener noreferrer" target="_blank"><img alt="下鴨神社鳥居與境內（過往拍攝的實景參考照，非 2026 年即時景況）" decoding="async" loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Shimogamo_Shrine%2C_Kyoto.jpg/800px-Shimogamo_Shrine%2C_Kyoto.jpg"/></a><figcaption><span>📷 下鴨神社鳥居與境內</span><a class="photo-source" href="https://commons.wikimedia.org/wiki/File:Shimogamo_Shrine%2C_Kyoto.jpg" rel="noopener noreferrer" target="_blank">照片來源 ↗</a></figcaption></figure></div></article><article class="static-stop"><div class="static-stop-time">下午</div><div><p class="static-stop-title"><input aria-label="完成：抹茶店小旅行" class="static-check" type="checkbox"/>抹茶店小旅行</p><p class="static-stop-desc">抹茶、甜點與放鬆時光，店家可依當日路線挑選。</p><div class="static-stop-tags"><span class="tag walk">步行</span><a class="map-inline" href="https://www.google.com/maps/search/?api=1&amp;query=京都 下鴨神社 抹茶" rel="noopener noreferrer" target="_blank">地圖 ↗</a></div></div></article><p class="static-day-tip"><strong>小提醒：</strong>金閣寺、慧光寺、下鴨神社的移動時間建議另行確認；慧光寺請用地圖核對欲前往的寺院位置。</p></div></details><details class="static-day-entry" id="static-day-5" open=""><summary><span>Day 5 · 12/02（三）</span><span>京都再見，大阪你好！</span></summary><div class="static-day-body"><p class="static-day-intro">從京都移動到大阪，逛逛梅田百貨，再到新的飯店入住。</p><article class="static-stop"><div class="static-stop-time">上午</div><div><p class="static-stop-title"><input aria-label="完成：京都退房・前往大阪" class="static-check" type="checkbox"/>京都退房・前往大阪</p><p class="static-stop-desc">整理行李，搭車前往大阪市區。</p><div class="static-stop-tags"><span class="tag rail">電車</span></div></div></article><article class="static-stop"><div class="static-stop-time">中午～午後</div><div><p class="static-stop-title"><input aria-label="完成：梅田百貨散步" class="static-check" type="checkbox"/>梅田百貨散步</p><p class="static-stop-desc">逛街、吃午餐，享受大阪的熱鬧氣氛。</p><div class="static-stop-tags"><span class="tag rail">電車＋步行</span><span class="tag must">★ 必去</span><a class="map-inline" href="https://www.google.com/maps/search/?api=1&amp;query=大阪 梅田 百貨公司" rel="noopener noreferrer" target="_blank">地圖 ↗</a></div><figure class="spot-photo"><a aria-label="看梅田百貨散步原始照片與拍攝來源" href="https://commons.wikimedia.org/wiki/File:Grand_front_Osaka.jpg" rel="noopener noreferrer" target="_blank"><img alt="大阪梅田商圈・Grand Front Osaka（過往拍攝的實景參考照，非 2026 年即時景況）" decoding="async" loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Grand_front_Osaka.jpg/800px-Grand_front_Osaka.jpg"/></a><figcaption><span>📷 大阪梅田商圈・Grand Front Osaka</span><a class="photo-source" href="https://commons.wikimedia.org/wiki/File:Grand_front_Osaka.jpg" rel="noopener noreferrer" target="_blank">照片來源 ↗</a></figcaption></figure></div></article><article class="static-stop"><div class="static-stop-time">傍晚</div><div><p class="static-stop-title"><input aria-label="完成：大阪飯店 Check-in" class="static-check" type="checkbox"/>大阪飯店 Check-in</p><p class="static-stop-desc">HOTEL AMANEK Osaka Namba。</p><div class="static-stop-tags"><span class="tag rail">電車＋步行</span><a class="map-inline" href="https://www.google.com/maps/search/?api=1&amp;query=HOTEL AMANEK Osaka Namba" rel="noopener noreferrer" target="_blank">地圖 ↗</a></div></div></article><article class="static-stop"><div class="static-stop-time">晚上</div><div><p class="static-stop-title"><input aria-label="完成：自由晚餐・休息" class="static-check" type="checkbox"/>自由晚餐・休息</p><p class="static-stop-desc">整理戰利品，準備大阪的冒險。</p><div class="static-stop-tags"><span class="tag walk">步行</span></div></div></article><p class="static-day-tip"><strong>小提醒：</strong>今天是移動日：請確認京都飯店退房與大阪飯店入住時間。若預約行李寄送，前一晚先確認寄件單、時間與收件方式。</p></div></details><details class="static-day-entry" id="static-day-6" open=""><summary><span>Day 6 · 12/03（四）</span><span>銀杏街景與大阪城</span></summary><div class="static-day-body"><p class="static-day-intro">尋找金黃色的街道，再前往大阪城公園散步、拍照。</p><article class="static-stop"><div class="static-stop-time">上午</div><div><p class="static-stop-title"><input aria-label="完成：難宗寺" class="static-check" type="checkbox"/>難宗寺</p><p class="static-stop-desc">欣賞寺院周邊的銀杏與城市景致。</p><div class="static-stop-tags"><span class="tag rail">電車＋步行</span><span class="tag must">★ 必去</span><a class="map-inline" href="https://www.google.com/maps/search/?api=1&amp;query=難宗寺 大阪" rel="noopener noreferrer" target="_blank">地圖 ↗</a></div></div></article><article class="static-stop"><div class="static-stop-time">午後</div><div><p class="static-stop-title"><input aria-label="完成：大阪城" class="static-check" type="checkbox"/>大阪城</p><p class="static-stop-desc">漫步公園、欣賞城堡建築與秋冬景色。</p><div class="static-stop-tags"><span class="tag rail">電車＋步行</span><span class="tag must">★ 必去</span><a class="map-inline" href="https://www.google.com/maps/search/?api=1&amp;query=大阪城 大阪" rel="noopener noreferrer" target="_blank">地圖 ↗</a></div><figure class="spot-photo"><a aria-label="看大阪城原始照片與拍攝來源" href="https://commons.wikimedia.org/wiki/File:Osaka_Castle_Keep_Tower_in_201411_001.JPG" rel="noopener noreferrer" target="_blank"><img alt="秋季大阪城天守閣（過往拍攝的實景參考照，非 2026 年即時景況）" decoding="async" loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Osaka_Castle_Keep_Tower_in_201411_001.JPG/800px-Osaka_Castle_Keep_Tower_in_201411_001.JPG"/></a><figcaption><span>📷 秋季大阪城天守閣</span><a class="photo-source" href="https://commons.wikimedia.org/wiki/File:Osaka_Castle_Keep_Tower_in_201411_001.JPG" rel="noopener noreferrer" target="_blank">照片來源 ↗</a></figcaption></figure></div></article><article class="static-stop"><div class="static-stop-time">傍晚</div><div><p class="static-stop-title"><input aria-label="完成：大阪自由散步" class="static-check" type="checkbox"/>大阪自由散步</p><p class="static-stop-desc">想多拍照就慢慢拍，晚餐再視體力安排。</p><div class="static-stop-tags"><span class="tag walk">步行</span></div></div></article><p class="static-day-tip"><strong>小提醒：</strong>大阪的銀杏變色與落葉狀況每年不同，實際景色以當週天候為準。兩個景點都可以留較充裕的散步時間。</p></div></details><details class="static-day-entry" id="static-day-7" open=""><summary><span>Day 7 · 12/04（五）</span><span>神社巡禮・難波夜散步</span></summary><div class="static-day-body"><p class="static-day-intro">今天從住吉大社逛到難波，最後用心齋橋與道頓堀的夜景收尾！</p><article class="static-stop"><div class="static-stop-time">早上</div><div><p class="static-stop-title"><input aria-label="完成：住吉大社" class="static-check" type="checkbox"/>住吉大社</p><p class="static-stop-desc">參拜神社、欣賞特色太鼓橋與建築。</p><div class="static-stop-tags"><span class="tag rail">電車＋步行</span><span class="tag must">★ 必去</span><a class="map-inline" href="https://www.google.com/maps/search/?api=1&amp;query=住吉大社 大阪" rel="noopener noreferrer" target="_blank">地圖 ↗</a></div><figure class="spot-photo"><a aria-label="看住吉大社原始照片與拍攝來源" href="https://commons.wikimedia.org/wiki/File:Sumiyoshi-taisha_(Osaka_Sumiyoshi-ku)_Shrine_hdsr_S5_s02.jpg" rel="noopener noreferrer" target="_blank"><img alt="住吉大社・反橋（過往拍攝的實景參考照，非 2026 年即時景況）" decoding="async" loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Sumiyoshi-taisha_(Osaka_Sumiyoshi-ku)_Shrine_hdsr_S5_s02.jpg/800px-Sumiyoshi-taisha_(Osaka_Sumiyoshi-ku)_Shrine_hdsr_S5_s02.jpg"/></a><figcaption><span>📷 住吉大社・反橋</span><a class="photo-source" href="https://commons.wikimedia.org/wiki/File:Sumiyoshi-taisha_(Osaka_Sumiyoshi-ku)_Shrine_hdsr_S5_s02.jpg" rel="noopener noreferrer" target="_blank">照片來源 ↗</a></figcaption></figure></div></article><article class="static-stop"><div class="static-stop-time">上午</div><div><p class="static-stop-title"><input aria-label="完成：難波八阪神社" class="static-check" type="checkbox"/>難波八阪神社</p><p class="static-stop-desc">看看令人印象深刻的大獅子殿。</p><div class="static-stop-tags"><span class="tag rail">電車＋步行</span><span class="tag must">★ 必去</span><a class="map-inline" href="https://www.google.com/maps/search/?api=1&amp;query=難波八阪神社 大阪" rel="noopener noreferrer" target="_blank">地圖 ↗</a></div><figure class="spot-photo"><a aria-label="看難波八阪神社原始照片與拍攝來源" href="https://commons.wikimedia.org/wiki/File:Namba-Yasaka-Shrine-entrance_seeing_lion_head.jpg" rel="noopener noreferrer" target="_blank"><img alt="難波八阪神社的獅子殿（過往拍攝的實景參考照，非 2026 年即時景況）" decoding="async" loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Namba-Yasaka-Shrine-entrance_seeing_lion_head.jpg/800px-Namba-Yasaka-Shrine-entrance_seeing_lion_head.jpg"/></a><figcaption><span>📷 難波八阪神社的獅子殿</span><a class="photo-source" href="https://commons.wikimedia.org/wiki/File:Namba-Yasaka-Shrine-entrance_seeing_lion_head.jpg" rel="noopener noreferrer" target="_blank">照片來源 ↗</a></figcaption></figure></div></article><article class="static-stop"><div class="static-stop-time">中午～午後</div><div><p class="static-stop-title"><input aria-label="完成：狗狗神社" class="static-check" type="checkbox"/>狗狗神社</p><p class="static-stop-desc">依最後確認的位置安排前往與參拜。</p><div class="static-stop-tags"><span class="tag bus">大眾運輸</span><a class="map-inline" href="https://www.google.com/maps/search/?api=1&amp;query=大阪 狗狗神社" rel="noopener noreferrer" target="_blank">地圖 ↗</a></div></div></article><article class="static-stop"><div class="static-stop-time">下午</div><div><p class="static-stop-title"><input aria-label="完成：心齋橋" class="static-check" type="checkbox"/>心齋橋</p><p class="static-stop-desc">逛街、挑禮物與伴手禮。</p><div class="static-stop-tags"><span class="tag rail">電車＋步行</span><a class="map-inline" href="https://www.google.com/maps/search/?api=1&amp;query=心斎橋筋商店街 大阪" rel="noopener noreferrer" target="_blank">地圖 ↗</a></div><figure class="spot-photo"><a aria-label="看心齋橋原始照片與拍攝來源" href="https://commons.wikimedia.org/wiki/File:Shinsaibashi-suji_Shopping_Street_20190201.jpg" rel="noopener noreferrer" target="_blank"><img alt="心齋橋筋商店街（過往拍攝的實景參考照，非 2026 年即時景況）" decoding="async" loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Shinsaibashi-suji_Shopping_Street_20190201.jpg/800px-Shinsaibashi-suji_Shopping_Street_20190201.jpg"/></a><figcaption><span>📷 心齋橋筋商店街</span><a class="photo-source" href="https://commons.wikimedia.org/wiki/File:Shinsaibashi-suji_Shopping_Street_20190201.jpg" rel="noopener noreferrer" target="_blank">照片來源 ↗</a></figcaption></figure></div></article><article class="static-stop"><div class="static-stop-time">晚上</div><div><p class="static-stop-title"><input aria-label="完成：道頓堀" class="static-check" type="checkbox"/>道頓堀</p><p class="static-stop-desc">看霓虹街景、品嚐大阪美食，留下最後一晚回憶。</p><div class="static-stop-tags"><span class="tag walk">步行</span><span class="tag must">★ 必去</span><a class="map-inline" href="https://www.google.com/maps/search/?api=1&amp;query=道頓堀 大阪" rel="noopener noreferrer" target="_blank">地圖 ↗</a></div><figure class="spot-photo"><a aria-label="看道頓堀原始照片與拍攝來源" href="https://commons.wikimedia.org/wiki/File:Glico_Man_sign%2C_Dotonbori.JPG" rel="noopener noreferrer" target="_blank"><img alt="道頓堀固力果跑跑人看板（過往拍攝的實景參考照，非 2026 年即時景況）" decoding="async" loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Glico_Man_sign%2C_Dotonbori.JPG/800px-Glico_Man_sign%2C_Dotonbori.JPG"/></a><figcaption><span>📷 道頓堀固力果跑跑人看板</span><a class="photo-source" href="https://commons.wikimedia.org/wiki/File:Glico_Man_sign%2C_Dotonbori.JPG" rel="noopener noreferrer" target="_blank">照片來源 ↗</a></figcaption></figure></div></article><p class="static-day-tip"><strong>小提醒：</strong>狗狗神社目前沿用行程提供的名稱，請先確認正式名稱與地點；這天跨區移動較多，商圈放在後半天較有彈性。</p></div></details><details class="static-day-entry" id="static-day-8" open=""><summary><span>Day 8 · 12/05（六）</span><span>帶著回憶回台灣</span></summary><div class="static-day-body"><p class="static-day-intro">退房、前往關西機場，搭上上午班機返回高雄。</p><article class="static-stop"><div class="static-stop-time">清晨</div><div><p class="static-stop-title"><input aria-label="完成：大阪飯店退房" class="static-check" type="checkbox"/>大阪飯店退房</p><p class="static-stop-desc">檢查護照、手機、充電器與隨身物品。</p><div class="static-stop-tags"><span class="tag walk">步行</span></div></div></article><article class="static-stop"><div class="static-stop-time">早上</div><div><p class="static-stop-title"><input aria-label="完成：飯店 → 關西國際機場" class="static-check" type="checkbox"/>飯店 → 關西國際機場</p><p class="static-stop-desc">預留交通、托運行李、安檢與報到時間。</p><div class="static-stop-tags"><span class="tag rail">電車</span><a class="map-inline" href="https://www.google.com/maps/search/?api=1&amp;query=関西国際空港 第2ターミナル" rel="noopener noreferrer" target="_blank">地圖 ↗</a></div></div></article><article class="static-stop"><div class="static-stop-time">10:35</div><div><p class="static-stop-title"><input aria-label="完成：從關西機場起飛" class="static-check" type="checkbox"/>從關西機場起飛</p><p class="static-stop-desc">Peach MM031 · KIX → KHH。</p><div class="static-stop-tags"><span class="tag air">飛機</span><span class="tag must">★ 必去</span></div></div></article><article class="static-stop"><div class="static-stop-time">13:20</div><div><p class="static-stop-title"><input aria-label="完成：抵達高雄・回到台灣" class="static-check" type="checkbox"/>抵達高雄・回到台灣</p><p class="static-stop-desc">旅行結束！把滿滿照片與回憶帶回家 ♡</p><div class="static-stop-tags"><span class="tag air">飛機</span></div></div></article><p class="static-day-tip"><strong>小提醒：</strong>回程 Peach MM031 10:35 起飛，圖片標示關西機場第 2 航廈；請提早規劃出門時間並以最新航班資訊再確認。</p></div></details></div>
+    <details class="photo-credits"><summary>📷 照片來源及授權資訊（共 14 張）</summary><div class="credits-inner"><p>圖片均為過去拍攝的景點實景參考照，非即時天氣或花況。照片來自 Wikimedia Commons，點選各照片可查看原作品與完整授權條款。照片畫面依版型以 CSS 裁切顯示，未更動原始照片。</p><ul><li><a href="https://commons.wikimedia.org/wiki/File:%E7%BE%8E%E5%B1%B1%E3%81%AE%E3%81%8B%E3%82%84%E3%81%B6%E3%81%8D%E3%81%AE%E9%87%8C_(Kayabuku-no-Sato_in_Miyama)_22_Jun%2C_2013_-_panoramio.jpg" target="_blank" rel="noopener noreferrer">美山茅草屋之里｜美山茅草屋聚落</a> — 攝影：Hiroaki Kaneko；CC BY-SA 3.0。</li><li><a href="https://commons.wikimedia.org/wiki/File:A_view_of_Nishiki_Market%2C_Kyoto%2C_Japan.jpg" target="_blank" rel="noopener noreferrer">錦市場｜錦市場的熱鬧街景</a> — 攝影：Joli Rumi；CC BY-SA 4.0。</li><li><a href="https://commons.wikimedia.org/wiki/File:Tofuku-ji%2C_Kyoto_-_Tofukuji6592.jpg" target="_blank" rel="noopener noreferrer">東福寺｜東福寺與紅葉</a> — 攝影：lumoplank；CC0 1.0。</li><li><a href="https://commons.wikimedia.org/wiki/File:Kiyomizu-dera%2C_Kyoto%2C_November_2016_-01.jpg" target="_blank" rel="noopener noreferrer">清水寺｜清水寺與秋季楓葉</a> — 攝影：Martin Falbisoner；CC BY-SA 4.0。</li><li><a href="https://commons.wikimedia.org/wiki/File:Sannenzaka-kyoto.JPG" target="_blank" rel="noopener noreferrer">三年坂｜三年坂古街</a> — 攝影：Aporon999；CC BY-SA 3.0。</li><li><a href="https://commons.wikimedia.org/wiki/File:Ninenzaka.jpg" target="_blank" rel="noopener noreferrer">二年坂｜二年坂石板街道</a> — 攝影：Paul Synnott（修圖：トトト）；CC BY 2.0。</li><li><a href="https://commons.wikimedia.org/wiki/File:The_iconic_Golden_Pavilion_(%22Kinkaku-ji%22)%2C_Kyoto%2C_Japan.jpg" target="_blank" rel="noopener noreferrer">金閣寺｜金閣寺金色樓閣</a> — 攝影：OKJaguar；CC BY 4.0。</li><li><a href="https://commons.wikimedia.org/wiki/File:Shimogamo_Shrine%2C_Kyoto.jpg" target="_blank" rel="noopener noreferrer">下鴨神社｜下鴨神社鳥居與境內</a> — 攝影：ChubbyWimbus；Public domain。</li><li><a href="https://commons.wikimedia.org/wiki/File:Grand_front_Osaka.jpg" target="_blank" rel="noopener noreferrer">梅田百貨散步｜大阪梅田商圈・Grand Front Osaka</a> — 攝影：Suzuki0411；CC BY-SA 3.0。</li><li><a href="https://commons.wikimedia.org/wiki/File:Osaka_Castle_Keep_Tower_in_201411_001.JPG" target="_blank" rel="noopener noreferrer">大阪城｜秋季大阪城天守閣</a> — 攝影：Mc681；CC BY-SA 4.0。</li><li><a href="https://commons.wikimedia.org/wiki/File:Sumiyoshi-taisha_(Osaka_Sumiyoshi-ku)_Shrine_hdsr_S5_s02.jpg" target="_blank" rel="noopener noreferrer">住吉大社｜住吉大社・反橋</a> — 攝影：Hyppolyte de Saint-Rambert；CC BY 4.0。</li><li><a href="https://commons.wikimedia.org/wiki/File:Namba-Yasaka-Shrine-entrance_seeing_lion_head.jpg" target="_blank" rel="noopener noreferrer">難波八阪神社｜難波八阪神社的獅子殿</a> — 攝影：Immanuelle；CC BY 4.0。</li><li><a href="https://commons.wikimedia.org/wiki/File:Shinsaibashi-suji_Shopping_Street_20190201.jpg" target="_blank" rel="noopener noreferrer">心齋橋｜心齋橋筋商店街</a> — 攝影：そらみみ；CC BY-SA 4.0。</li><li><a href="https://commons.wikimedia.org/wiki/File:Glico_Man_sign%2C_Dotonbori.JPG" target="_blank" rel="noopener noreferrer">道頓堀｜道頓堀固力果跑跑人看板</a> — 攝影：Schellack；CC BY-SA 3.0。</li></ul></div></details>
+
+  </section>
+
+  <section class="section shell" id="hotels" aria-labelledby="hotelTitle">
+    <div class="section-heading"><div class="section-icon" style="background:var(--green)"><svg aria-hidden="true"><use href="#i-hotel"/></svg></div><div><p class="eyebrow">03 · SWEET DREAMS</p><h2 class="section-title" id="hotelTitle">今晚住哪裡？</h2><p class="section-sub">兩間落腳小基地，地址和 Google 地圖都準備好了</p></div></div>
+    <div class="stay-grid">
+      <article class="ink-card stay-card kyoto"><div class="stay-head"><span class="stay-icon"><svg class="icon" aria-hidden="true"><use href="#i-pagoda"/></svg></span><div><p class="stay-city">KYOTO · 京都</p><h3 class="stay-name">Smart Place Inn Kyoto Shijo Omiya Station</h3></div></div><div class="stay-dates"><span class="pill pink">入住 11/28</span><span class="pill yellow">退房 12/02</span><span class="pill green">共 4 晚</span></div><div class="stay-address"><span class="tiny-label">📍 飯店地址</span><span id="kyotoAddress">494 Fujiokacho, Nakagyo Ward, Kyoto, 604-8364 日本</span></div><div class="stay-actions"><a class="button mini primary" target="_blank" rel="noopener noreferrer" href="https://maps.app.goo.gl/YgXsPrcajHh9sup57?g_st=ic">打開 Google 地圖 ↗</a><button class="button mini" type="button" data-copy="kyotoAddress">複製地址</button></div></article>
+      <article class="ink-card stay-card osaka"><div class="stay-head"><span class="stay-icon"><svg class="icon" aria-hidden="true"><use href="#i-castle"/></svg></span><div><p class="stay-city">OSAKA · 大阪</p><h3 class="stay-name">HOTEL AMANEK Osaka Namba<br><span style="font-size:.79em">ホテルアマネク大阪なんば</span></h3></div></div><div class="stay-dates"><span class="pill blue">入住 12/02</span><span class="pill yellow">退房 12/05</span><span class="pill green">共 3 晚</span></div><div class="stay-address"><span class="tiny-label">📍 飯店地址</span><span id="osakaAddress">1 Chome-9-7 Sennichimae, Chuo Ward, Osaka, 542-0074 日本</span></div><div class="stay-actions"><a class="button mini primary" target="_blank" rel="noopener noreferrer" href="https://maps.app.goo.gl/2ZWg44Y66R14qgcv7?g_st=ic">打開 Google 地圖 ↗</a><button class="button mini" type="button" data-copy="osakaAddress">複製地址</button></div></article>
+    </div>
+  </section>
+
+  <section class="section shell" id="before-trip" aria-labelledby="beforeTitle">
+    <div class="section-heading"><div class="section-icon" style="background:var(--yellow)"><svg aria-hidden="true"><use href="#i-list"/></svg></div><div><p class="eyebrow">04 · BEFORE WE GO</p><h2 class="section-title" id="beforeTitle">出發前的小任務</h2><p class="section-sub">一項一項完成，就能安心出門玩！進度會存在這台裝置</p></div></div>
+    <div class="progress-heading"><p>出發準備完成度</p><strong id="prepCounter" aria-live="polite">0 / 11</strong></div>
+    <div class="checklist-grid" id="prepGrid"><div class="ink-card checklist-card"><div class="checklist-head"><h3>證件與預訂</h3></div><div class="checklist-row"><input class="static-check" type="checkbox" aria-label="確認護照效期及入境相關規定"><label class="item-text">確認護照效期及入境相關規定</label></div><div class="checklist-row"><input class="static-check" type="checkbox" aria-label="核對來回機票、航班與航廈"><label class="item-text">核對來回機票、航班與航廈</label></div><div class="checklist-row"><input class="static-check" type="checkbox" aria-label="保存京都、大阪住宿訂單與飯店地址"><label class="item-text">保存京都、大阪住宿訂單與飯店地址</label></div><div class="checklist-row"><input class="static-check" type="checkbox" aria-label="確認旅遊保險與緊急聯絡資料"><label class="item-text">確認旅遊保險與緊急聯絡資料</label></div><div class="checklist-row"><input class="static-check" type="checkbox" aria-label="確認日本最新入境申報流程"><label class="item-text">確認日本最新入境申報流程</label></div></div><div class="ink-card checklist-card"><div class="checklist-head"><h3>交通與旅遊準備</h3></div><div class="checklist-row"><input class="static-check" type="checkbox" aria-label="安排關西機場 ⇄ 市區交通"><label class="item-text">安排關西機場 ⇄ 市區交通</label></div><div class="checklist-row"><input class="static-check" type="checkbox" aria-label="確認美山往返交通與末班車"><label class="item-text">確認美山往返交通與末班車</label></div><div class="checklist-row"><input class="static-check" type="checkbox" aria-label="準備交通卡、日幣及付款方式"><label class="item-text">準備交通卡、日幣及付款方式</label></div><div class="checklist-row"><input class="static-check" type="checkbox" aria-label="確認網卡／eSIM 或國際漫遊"><label class="item-text">確認網卡／eSIM 或國際漫遊</label></div><div class="checklist-row"><input class="static-check" type="checkbox" aria-label="查詢想去景點與店家的營業時間"><label class="item-text">查詢想去景點與店家的營業時間</label></div><div class="checklist-row"><input class="static-check" type="checkbox" aria-label="確認 12/2 換飯店時的行李運送或寄放方式"><label class="item-text">確認 12/2 換飯店時的行李運送或寄放方式</label></div></div></div>
+  </section>
+
+  <section class="section shell" id="packing" aria-labelledby="packingTitle">
+    <div class="section-heading"><div class="section-icon" style="background:var(--blue)"><svg aria-hidden="true"><use href="#i-suitcase"/></svg></div><div><p class="eyebrow">05 · WHAT'S IN MY BAG?</p><h2 class="section-title" id="packingTitle">行李打包清單</h2><p class="section-sub">關西晚秋早晚偏涼，保暖小物也別忘記帶</p></div></div>
+    <div class="progress-heading"><p>行李打包完成度</p><strong id="packCounter" aria-live="polite">0 / 23</strong></div>
+    <div class="packing-grid" id="packingGrid"><div class="ink-card pack-card"><div class="checklist-head"><h3>重要隨身物品</h3></div><div class="checklist-row"><input class="static-check" type="checkbox" aria-label="護照"><label class="item-text">護照</label></div><div class="checklist-row"><input class="static-check" type="checkbox" aria-label="現金、信用卡"><label class="item-text">現金、信用卡</label></div><div class="checklist-row"><input class="static-check" type="checkbox" aria-label="機票及訂房資料（電子檔／截圖）"><label class="item-text">機票及訂房資料（電子檔／截圖）</label></div><div class="checklist-row"><input class="static-check" type="checkbox" aria-label="交通卡"><label class="item-text">交通卡</label></div><div class="checklist-row"><input class="static-check" type="checkbox" aria-label="保險及緊急聯絡資訊"><label class="item-text">保險及緊急聯絡資訊</label></div></div><div class="ink-card pack-card"><div class="checklist-head"><h3>衣服與保暖配件</h3></div><div class="checklist-row"><input class="static-check" type="checkbox" aria-label="保暖外套"><label class="item-text">保暖外套</label></div><div class="checklist-row"><input class="static-check" type="checkbox" aria-label="上衣與保暖內搭"><label class="item-text">上衣與保暖內搭</label></div><div class="checklist-row"><input class="static-check" type="checkbox" aria-label="長褲、換洗衣物"><label class="item-text">長褲、換洗衣物</label></div><div class="checklist-row"><input class="static-check" type="checkbox" aria-label="襪子、內衣褲"><label class="item-text">襪子、內衣褲</label></div><div class="checklist-row"><input class="static-check" type="checkbox" aria-label="圍巾、帽子、手套"><label class="item-text">圍巾、帽子、手套</label></div><div class="checklist-row"><input class="static-check" type="checkbox" aria-label="好走的鞋子"><label class="item-text">好走的鞋子</label></div></div><div class="ink-card pack-card"><div class="checklist-head"><h3>3C 與拍照小物</h3></div><div class="checklist-row"><input class="static-check" type="checkbox" aria-label="手機"><label class="item-text">手機</label></div><div class="checklist-row"><input class="static-check" type="checkbox" aria-label="手機充電線、充電器"><label class="item-text">手機充電線、充電器</label></div><div class="checklist-row"><input class="static-check" type="checkbox" aria-label="行動電源（放隨身行李）"><label class="item-text">行動電源（放隨身行李）</label></div><div class="checklist-row"><input class="static-check" type="checkbox" aria-label="日本適用插頭／轉接設備（依需求）"><label class="item-text">日本適用插頭／轉接設備（依需求）</label></div><div class="checklist-row"><input class="static-check" type="checkbox" aria-label="網卡／eSIM 資料"><label class="item-text">網卡／eSIM 資料</label></div><div class="checklist-row"><input class="static-check" type="checkbox" aria-label="相機或拍照配件"><label class="item-text">相機或拍照配件</label></div></div><div class="ink-card pack-card"><div class="checklist-head"><h3>生活用品與其他</h3></div><div class="checklist-row"><input class="static-check" type="checkbox" aria-label="牙刷、個人盥洗用品"><label class="item-text">牙刷、個人盥洗用品</label></div><div class="checklist-row"><input class="static-check" type="checkbox" aria-label="保養品、護唇膏"><label class="item-text">保養品、護唇膏</label></div><div class="checklist-row"><input class="static-check" type="checkbox" aria-label="個人常備藥品"><label class="item-text">個人常備藥品</label></div><div class="checklist-row"><input class="static-check" type="checkbox" aria-label="面紙、濕紙巾"><label class="item-text">面紙、濕紙巾</label></div><div class="checklist-row"><input class="static-check" type="checkbox" aria-label="折傘"><label class="item-text">折傘</label></div><div class="checklist-row"><input class="static-check" type="checkbox" aria-label="環保袋、裝戰利品的小袋子"><label class="item-text">環保袋、裝戰利品的小袋子</label></div></div></div>
+    <div class="ink-card custom-pack"><h3>♡ 還有其他想帶的嗎？</h3><p>新增自己的行李項目，也可以打勾或刪除。</p><form class="add-pack-form" id="addPackForm"><label for="addPackInput" class="sr-only">自行新增行李項目</label><input id="addPackInput" type="text" maxlength="36" placeholder="例如：旅行小相機、暖暖包⋯" autocomplete="off" required><button class="button mini primary" type="submit">＋ 新增項目</button></form><div id="customPackList" class="custom-pack-list" aria-label="自行新增的行李清單"></div></div>
+    <div class="packing-alert"><strong>小提醒：</strong>行動電源及備用鋰電池請依航空公司規範放入隨身行李，不要放託運行李；液體、藥品與入境物品規定也請在出發前確認。</div>
+  </section>
+</main>
+
+<footer class="footer"><div class="shell footer-layout"><div><p class="footer-title">京都 ♡ 大阪，出發囉！</p><p>2026/11/28 — 12/05 · 手繪小旅行日記</p><p>每日「上午／下午」為建議安排時段，不代表已預約；景點開放時間、交通班次與季節景觀請於出發前確認。打勾紀錄保存在目前瀏覽器中。</p></div><div class="footer-actions"><a href="#home" class="button mini soft">↑ 回到首頁</a><button id="resetProgress" class="button mini" type="button">重設勾選紀錄</button></div></div></footer>
+<button id="backTop" type="button" class="back-top" aria-label="返回頁首"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+
+<script>
+(() => {
+  'use strict';
+  const $ = (selector, root = document) => root.querySelector(selector);
+  const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
+  const use = (icon, cls = 'icon') => `<svg class="${cls}" aria-hidden="true"><use href="#i-${icon}"></use></svg>`;
+  const escapeHTML = (value) => String(value).replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+  const mapLink = (place) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(place)}`;
+  const trip = [
+    {date:'11/28', weekday:'六', iso:'2026-11-28', color:'pink', icon:'plane', title:'飛向京都的第一天', summary:'高雄出發！先抵達京都、安頓行李，再用一頓晚餐開啟旅行。', tip:'航班 18:05 抵達關西機場（日本時間）；入境、領行李與前往京都都需要時間，晚餐保持彈性最舒服。', stops:[
+      {time:'14:20', title:'高雄機場起飛', desc:'Peach MM032 · 前往關西國際機場。', mode:'飛機', kind:'air'},
+      {time:'18:05', title:'抵達關西國際機場', desc:'入境、領取行李，準備前往京都。', mode:'步行', kind:'walk'},
+      {time:'抵達後', title:'關西機場 → 京都', desc:'可確認 HARUKA 或其他適合的交通方式。', mode:'電車', kind:'rail'},
+      {time:'晚上', title:'京都飯店 Check-in', desc:'Smart Place Inn Kyoto Shijo Omiya Station。', mode:'步行', kind:'walk', map:'Smart Place Inn Kyoto Shijo Omiya Station'},
+      {time:'晚上', title:'晚餐・京都第一夜', desc:'在飯店周邊找間喜歡的小店，吃飽休息！', mode:'步行', kind:'walk'}
+    ]},
+    {date:'11/29', weekday:'日', iso:'2026-11-29', color:'green', icon:'hut', title:'美山茅草屋的一日散步', summary:'走進彷彿童話的小村落，看茅草屋、山景，收藏慢慢走的好時光。', tip:'美山位於京都市區外，車程較長；若搭大眾運輸，記得事先確認巴士銜接、回程末班與天候。', stops:[
+      {time:'上午', title:'從京都前往美山', desc:'依選定路線搭乘交通工具，保留轉乘時間。', mode:'火車＋巴士', kind:'bus'},
+      {time:'白天', title:'美山茅草屋之里', desc:'欣賞傳統茅葺屋頂與村落風光，慢慢拍照。', mode:'步行', kind:'walk', must:true, map:'美山かやぶきの里 京都'},
+      {time:'中午', title:'美山午餐小歇', desc:'尋找在地餐點，補充體力。', mode:'步行', kind:'walk', map:'美山かやぶきの里 飲食店'},
+      {time:'午後', title:'村落散步・風景紀錄', desc:'沿著小路繼續探索，不趕行程。', mode:'步行', kind:'walk'},
+      {time:'傍晚', title:'返回京都市區', desc:'依預先確認的回程車次返程。', mode:'火車＋巴士', kind:'bus'}
+    ]},
+    {date:'11/30', weekday:'一', iso:'2026-11-30', color:'pink', icon:'pagoda', title:'京都楓葉與古街散策', summary:'錦市場早上吃美食，再到東福寺賞楓；白天參觀清水寺，慢慢逛三年坂與二年坂。', tip:'錦市場排在 10:00 左右，清水寺保留白天自然光；秋季人潮多，交通與排隊時間請保持彈性。', stops:[
+      {time:'10:00–11:00', title:'錦市場', desc:'早上先逛市場、品嚐京都特色小吃。', mode:'步行', kind:'walk', must:true, map:'錦市場 京都'},
+      {time:'11:45–12:50', title:'東福寺', desc:'欣賞寺院庭園與通天橋秋日楓葉景致。', mode:'電車＋步行', kind:'rail', must:true, map:'東福寺 京都'},
+      {time:'13:50–15:10', title:'清水寺', desc:'白天欣賞楓葉與清水舞台，拍攝京都風景。', mode:'大眾運輸＋步行', kind:'bus', must:true, map:'清水寺 京都'},
+      {time:'15:10–15:45', title:'三年坂', desc:'從清水寺下山，沿石板坡道欣賞傳統街景。', mode:'步行', kind:'walk', map:'産寧坂 京都'},
+      {time:'15:45–16:30', title:'二年坂', desc:'繼續逛伴手禮小店，欣賞京都老街。', mode:'步行', kind:'walk', map:'二寧坂 京都'}
+    ]},
+    {date:'12/01', weekday:'二', iso:'2026-12-01', color:'yellow', icon:'matcha', title:'金色寺院與抹茶香', summary:'走訪寺院、欣賞銀杏與秋色，最後找間抹茶店好好坐一下。', tip:'金閣寺、慧光寺、下鴨神社的移動時間建議另行確認；慧光寺請用地圖核對欲前往的寺院位置。', stops:[
+      {time:'上午', title:'金閣寺', desc:'欣賞金色樓閣與庭園景觀。', mode:'巴士＋步行', kind:'bus', must:true, map:'金閣寺 京都'},
+      {time:'中午前', title:'慧光寺', desc:'感受京都寺院的靜謐氣氛。', mode:'大眾運輸', kind:'bus', map:'慧光寺 京都'},
+      {time:'午後', title:'下鴨神社', desc:'漫步神社周邊，尋找季節色彩。', mode:'大眾運輸＋步行', kind:'bus', must:true, map:'下鴨神社 京都'},
+      {time:'下午', title:'抹茶店小旅行', desc:'抹茶、甜點與放鬆時光，店家可依當日路線挑選。', mode:'步行', kind:'walk', map:'京都 下鴨神社 抹茶'}
+    ]},
+    {date:'12/02', weekday:'三', iso:'2026-12-02', color:'blue', icon:'train', title:'京都再見，大阪你好！', summary:'從京都移動到大阪，逛逛梅田百貨，再到新的飯店入住。', tip:'今天是移動日：請確認京都飯店退房與大阪飯店入住時間。若預約行李寄送，前一晚先確認寄件單、時間與收件方式。', stops:[
+      {time:'上午', title:'京都退房・前往大阪', desc:'整理行李，搭車前往大阪市區。', mode:'電車', kind:'rail'},
+      {time:'中午～午後', title:'梅田百貨散步', desc:'逛街、吃午餐，享受大阪的熱鬧氣氛。', mode:'電車＋步行', kind:'rail', must:true, map:'大阪 梅田 百貨公司'},
+      {time:'傍晚', title:'大阪飯店 Check-in', desc:'HOTEL AMANEK Osaka Namba。', mode:'電車＋步行', kind:'rail', map:'HOTEL AMANEK Osaka Namba'},
+      {time:'晚上', title:'自由晚餐・休息', desc:'整理戰利品，準備大阪的冒險。', mode:'步行', kind:'walk'}
+    ]},
+    {date:'12/03', weekday:'四', iso:'2026-12-03', color:'green', icon:'castle', title:'銀杏街景與大阪城', summary:'尋找金黃色的街道，再前往大阪城公園散步、拍照。', tip:'大阪的銀杏變色與落葉狀況每年不同，實際景色以當週天候為準。兩個景點都可以留較充裕的散步時間。', stops:[
+      {time:'上午', title:'難宗寺', desc:'欣賞寺院周邊的銀杏與城市景致。', mode:'電車＋步行', kind:'rail', must:true, map:'難宗寺 大阪'},
+      {time:'午後', title:'大阪城', desc:'漫步公園、欣賞城堡建築與秋冬景色。', mode:'電車＋步行', kind:'rail', must:true, map:'大阪城 大阪'},
+      {time:'傍晚', title:'大阪自由散步', desc:'想多拍照就慢慢拍，晚餐再視體力安排。', mode:'步行', kind:'walk'}
+    ]},
+    {date:'12/04', weekday:'五', iso:'2026-12-04', color:'yellow', icon:'torii', title:'神社巡禮・難波夜散步', summary:'今天從住吉大社逛到難波，最後用心齋橋與道頓堀的夜景收尾！', tip:'狗狗神社目前沿用行程提供的名稱，請先確認正式名稱與地點；這天跨區移動較多，商圈放在後半天較有彈性。', stops:[
+      {time:'早上', title:'住吉大社', desc:'參拜神社、欣賞特色太鼓橋與建築。', mode:'電車＋步行', kind:'rail', must:true, map:'住吉大社 大阪'},
+      {time:'上午', title:'難波八阪神社', desc:'看看令人印象深刻的大獅子殿。', mode:'電車＋步行', kind:'rail', must:true, map:'難波八阪神社 大阪'},
+      {time:'中午～午後', title:'狗狗神社', desc:'依最後確認的位置安排前往與參拜。', mode:'大眾運輸', kind:'bus', map:'大阪 狗狗神社'},
+      {time:'下午', title:'心齋橋', desc:'逛街、挑禮物與伴手禮。', mode:'電車＋步行', kind:'rail', map:'心斎橋筋商店街 大阪'},
+      {time:'晚上', title:'道頓堀', desc:'看霓虹街景、品嚐大阪美食，留下最後一晚回憶。', mode:'步行', kind:'walk', must:true, map:'道頓堀 大阪'}
+    ]},
+    {date:'12/05', weekday:'六', iso:'2026-12-05', color:'blue', icon:'suitcase', title:'帶著回憶回台灣', summary:'退房、前往關西機場，搭上上午班機返回高雄。', tip:'回程 Peach MM031 10:35 起飛，圖片標示關西機場第 2 航廈；請提早規劃出門時間並以最新航班資訊再確認。', stops:[
+      {time:'清晨', title:'大阪飯店退房', desc:'檢查護照、手機、充電器與隨身物品。', mode:'步行', kind:'walk'},
+      {time:'早上', title:'飯店 → 關西國際機場', desc:'預留交通、托運行李、安檢與報到時間。', mode:'電車', kind:'rail', map:'関西国際空港 第2ターミナル'},
+      {time:'10:35', title:'從關西機場起飛', desc:'Peach MM031 · KIX → KHH。', mode:'飛機', kind:'air', must:true},
+      {time:'13:20', title:'抵達高雄・回到台灣', desc:'旅行結束！把滿滿照片與回憶帶回家 ♡', mode:'飛機', kind:'air'}
+    ]}
+  ];
+  const preparation = [
+    {id:'documents', icon:'note', title:'證件與預訂', caption:'確認必備文件與旅程資訊', items:[
+      ['passport','確認護照效期及入境相關規定'],
+      ['flight','核對來回機票、航班與航廈'],
+      ['hotels','保存京都、大阪住宿訂單與飯店地址'],
+      ['insurance','確認旅遊保險與緊急聯絡資料'],
+      ['entry','確認日本最新入境申報流程']
+    ]},
+    {id:'traffic', icon:'train', title:'交通與旅遊準備', caption:'車票、網路與旅費先準備', items:[
+      ['airport','安排關西機場 ⇄ 市區交通'],
+      ['miyama','確認美山往返交通與末班車'],
+      ['card','準備交通卡、日幣及付款方式'],
+      ['internet','確認網卡／eSIM 或國際漫遊'],
+      ['hours','查詢想去景點與店家的營業時間'],
+      ['luggage','確認 12/2 換飯店時的行李運送或寄放方式']
+    ]}
+  ];
+  const packing = [
+    {id:'essentials',icon:'note',title:'重要隨身物品',items:[['passport','護照'],['wallet','現金、信用卡'],['ticket','機票及訂房資料（電子檔／截圖）'],['travelcard','交通卡'],['insurance','保險及緊急聯絡資訊']]},
+    {id:'clothes',icon:'maple',title:'衣服與保暖配件',items:[['outer','保暖外套'],['top','上衣與保暖內搭'],['pants','長褲、換洗衣物'],['socks','襪子、內衣褲'],['warm','圍巾、帽子、手套'],['shoes','好走的鞋子']]},
+    {id:'electronics',icon:'camera',title:'3C 與拍照小物',items:[['phone','手機'],['charger','手機充電線、充電器'],['powerbank','行動電源（放隨身行李）'],['adapter','日本適用插頭／轉接設備（依需求）'],['network','網卡／eSIM 資料'],['camera','相機或拍照配件']]},
+    {id:'daily',icon:'heart',title:'生活用品與其他',items:[['brush','牙刷、個人盥洗用品'],['skincare','保養品、護唇膏'],['medicine','個人常備藥品'],['tissue','面紙、濕紙巾'],['umbrella','折傘'],['bag','環保袋、裝戰利品的小袋子']]}
+  ];
+  const storageKey = 'kyoto-osaka-storybook-2026-state-v1';
+  let state = { checked: {}, customPacking: [] };
+  try {
+    const raw = JSON.parse(localStorage.getItem(storageKey) || 'null');
+    if (raw && typeof raw === 'object') {
+      state.checked = raw.checked && typeof raw.checked === 'object' ? raw.checked : {};
+      state.customPacking = Array.isArray(raw.customPacking) ? raw.customPacking.filter(item => item && typeof item.id === 'string' && typeof item.title === 'string').slice(0,100) : [];
+    }
+  } catch(e) { /* 瀏覽器不允許儲存時仍可正常使用勾選功能 */ }
+  const save = () => { try { localStorage.setItem(storageKey, JSON.stringify(state)); } catch(e) {} };
+  const checkbox = (key, title) => `<label class="check-control" aria-label="完成：${escapeHTML(title)}"><input type="checkbox" data-key="${escapeHTML(key)}" ${state.checked[key]?'checked':''}><span class="check-look">${use('check')}</span></label>`;
+  const getAllDayKeys = () => trip.flatMap((day,i) => day.stops.map((stop,j)=>`day-${i}-${j}`));
+  const prepKeys = () => preparation.flatMap(g=>g.items.map(item=>`prep-${g.id}-${item[0]}`));
+  const packKeys = () => [...packing.flatMap(g=>g.items.map(item=>`pack-${g.id}-${item[0]}`)), ...state.customPacking.map(item=>`custom-${item.id}`)];
+  let currentDay = 0;
+  function renderTabs(){
+    $('#dayTabs').innerHTML = trip.map((day,i)=>`<button type="button" role="tab" class="day-tab" id="tab-${i}" data-day="${i}" aria-controls="dayPanel" aria-selected="${i === currentDay}" tabindex="${i === currentDay ? 0 : -1}"><span class="day-tiny">DAY ${i+1}</span><span class="day-date">${day.date}（${day.weekday}）</span></button>`).join('');
+  }
+
+  const scenicPhotos = {"美山茅草屋之里":{"img":"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/%E7%BE%8E%E5%B1%B1%E3%81%AE%E3%81%8B%E3%82%84%E3%81%B6%E3%81%8D%E3%81%AE%E9%87%8C_(Kayabuku-no-Sato_in_Miyama)_22_Jun%2C_2013_-_panoramio.jpg/800px-%E7%BE%8E%E5%B1%B1%E3%81%AE%E3%81%8B%E3%82%84%E3%81%B6%E3%81%8D%E3%81%AE%E9%87%8C_(Kayabuku-no-Sato_in_Miyama)_22_Jun%2C_2013_-_panoramio.jpg","page":"https://commons.wikimedia.org/wiki/File:%E7%BE%8E%E5%B1%B1%E3%81%AE%E3%81%8B%E3%82%84%E3%81%B6%E3%81%8D%E3%81%AE%E9%87%8C_(Kayabuku-no-Sato_in_Miyama)_22_Jun%2C_2013_-_panoramio.jpg","caption":"美山茅草屋聚落"},"錦市場":{"img":"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/A_view_of_Nishiki_Market%2C_Kyoto%2C_Japan.jpg/800px-A_view_of_Nishiki_Market%2C_Kyoto%2C_Japan.jpg","page":"https://commons.wikimedia.org/wiki/File:A_view_of_Nishiki_Market%2C_Kyoto%2C_Japan.jpg","caption":"錦市場的熱鬧街景"},"東福寺":{"img":"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Tofuku-ji%2C_Kyoto_-_Tofukuji6592.jpg/800px-Tofuku-ji%2C_Kyoto_-_Tofukuji6592.jpg","page":"https://commons.wikimedia.org/wiki/File:Tofuku-ji%2C_Kyoto_-_Tofukuji6592.jpg","caption":"東福寺與紅葉"},"清水寺":{"img":"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Kiyomizu-dera%2C_Kyoto%2C_November_2016_-01.jpg/800px-Kiyomizu-dera%2C_Kyoto%2C_November_2016_-01.jpg","page":"https://commons.wikimedia.org/wiki/File:Kiyomizu-dera%2C_Kyoto%2C_November_2016_-01.jpg","caption":"清水寺與秋季楓葉"},"三年坂":{"img":"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Sannenzaka-kyoto.JPG/800px-Sannenzaka-kyoto.JPG","page":"https://commons.wikimedia.org/wiki/File:Sannenzaka-kyoto.JPG","caption":"三年坂古街"},"二年坂":{"img":"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Ninenzaka.jpg/800px-Ninenzaka.jpg","page":"https://commons.wikimedia.org/wiki/File:Ninenzaka.jpg","caption":"二年坂石板街道"},"金閣寺":{"img":"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/The_iconic_Golden_Pavilion_(%22Kinkaku-ji%22)%2C_Kyoto%2C_Japan.jpg/800px-The_iconic_Golden_Pavilion_(%22Kinkaku-ji%22)%2C_Kyoto%2C_Japan.jpg","page":"https://commons.wikimedia.org/wiki/File:The_iconic_Golden_Pavilion_(%22Kinkaku-ji%22)%2C_Kyoto%2C_Japan.jpg","caption":"金閣寺金色樓閣"},"下鴨神社":{"img":"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Shimogamo_Shrine%2C_Kyoto.jpg/800px-Shimogamo_Shrine%2C_Kyoto.jpg","page":"https://commons.wikimedia.org/wiki/File:Shimogamo_Shrine%2C_Kyoto.jpg","caption":"下鴨神社鳥居與境內"},"梅田百貨散步":{"img":"https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Grand_front_Osaka.jpg/800px-Grand_front_Osaka.jpg","page":"https://commons.wikimedia.org/wiki/File:Grand_front_Osaka.jpg","caption":"大阪梅田商圈・Grand Front Osaka"},"大阪城":{"img":"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Osaka_Castle_Keep_Tower_in_201411_001.JPG/800px-Osaka_Castle_Keep_Tower_in_201411_001.JPG","page":"https://commons.wikimedia.org/wiki/File:Osaka_Castle_Keep_Tower_in_201411_001.JPG","caption":"秋季大阪城天守閣"},"住吉大社":{"img":"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Sumiyoshi-taisha_(Osaka_Sumiyoshi-ku)_Shrine_hdsr_S5_s02.jpg/800px-Sumiyoshi-taisha_(Osaka_Sumiyoshi-ku)_Shrine_hdsr_S5_s02.jpg","page":"https://commons.wikimedia.org/wiki/File:Sumiyoshi-taisha_(Osaka_Sumiyoshi-ku)_Shrine_hdsr_S5_s02.jpg","caption":"住吉大社・反橋"},"難波八阪神社":{"img":"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Namba-Yasaka-Shrine-entrance_seeing_lion_head.jpg/800px-Namba-Yasaka-Shrine-entrance_seeing_lion_head.jpg","page":"https://commons.wikimedia.org/wiki/File:Namba-Yasaka-Shrine-entrance_seeing_lion_head.jpg","caption":"難波八阪神社的獅子殿"},"心齋橋":{"img":"https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Shinsaibashi-suji_Shopping_Street_20190201.jpg/800px-Shinsaibashi-suji_Shopping_Street_20190201.jpg","page":"https://commons.wikimedia.org/wiki/File:Shinsaibashi-suji_Shopping_Street_20190201.jpg","caption":"心齋橋筋商店街"},"道頓堀":{"img":"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Glico_Man_sign%2C_Dotonbori.JPG/800px-Glico_Man_sign%2C_Dotonbori.JPG","page":"https://commons.wikimedia.org/wiki/File:Glico_Man_sign%2C_Dotonbori.JPG","caption":"道頓堀固力果跑跑人看板"}};
+  const photoForTitle = (title) => {
+    const p = scenicPhotos[title];
+    if (!p) return '';
+    return `<figure class="spot-photo"><a href="${p.page}" target="_blank" rel="noopener noreferrer" aria-label="看${escapeHTML(title)}的原始照片與來源"><img src="${p.img}" alt="${escapeHTML(p.caption)}（實景參考照片，非當年即時畫面）" loading="lazy" decoding="async"></a><figcaption><span>📷 ${escapeHTML(p.caption)}</span><a class="photo-source" href="${p.page}" target="_blank" rel="noopener noreferrer">照片來源 ↗</a></figcaption></figure>`;
+  };
+
+  const tagFor = (stop) => `<span class="tag ${stop.kind||'other'}">${escapeHTML(stop.mode)}</span>${stop.must?'<span class="tag must">★ 必去</span>':''}`;
+  function renderDay() {
+    const d=trip[currentDay];
+    const total=d.stops.length, done=d.stops.filter((s,j)=>state.checked[`day-${currentDay}-${j}`]).length;
+    const percent= total ? done/total*100 : 0;
+    $('#dayPanel').innerHTML = `<div class="itinerary-board bounce-in">
+      <article class="ink-card day-cover" data-color="${d.color}"><div><p class="day-number">DAY ${currentDay+1} · 2026/${d.date}（${d.weekday}）</p><h3 class="day-heading">${escapeHTML(d.title)}</h3><p class="day-summary">${escapeHTML(d.summary)}</p></div><div class="day-art-sticker">${use(d.icon)}</div></article>
+      <div class="ink-card timeline-card"><div class="timeline-intro"><h3>♡ 今日旅行時間軸</h3><div class="meter-block"><div class="meter-label"><span>足跡收集進度</span><span id="dayCount">${done} / ${total}</span></div><div class="meter" role="progressbar" id="dayMeter" aria-label="當日行程完成進度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${Math.round(percent)}"><div class="meter-fill" id="dayMeterFill" style="width:${percent}%"></div></div></div></div>
+      <div class="timeline-list">${d.stops.map((stop,j)=>{const key=`day-${currentDay}-${j}`;return `<article class="timeline-item ${state.checked[key]?'is-done':''}"><div class="timeline-time">${escapeHTML(stop.time)}</div><div class="timeline-dot" aria-hidden="true"></div><div class="timeline-content"><div class="timeline-mainline">${checkbox(key,stop.title)}<div><h4 class="timeline-title">${escapeHTML(stop.title)}</h4><p class="timeline-desc">${escapeHTML(stop.desc)}</p></div></div><div class="timeline-tags">${tagFor(stop)}${stop.map?`<a href="${mapLink(stop.map)}" class="map-inline" target="_blank" rel="noopener noreferrer" aria-label="在 Google 地圖尋找${escapeHTML(stop.title)}">查看地圖 ↗</a>`:''}</div>${photoForTitle(stop.title)}</div></article>`}).join('')}</div>
+      <aside class="day-advice">${use('note')}<p><strong>今天的小提醒：</strong>${escapeHTML(d.tip)}</p></aside></div>
+    </div>`;
+  }
+  function selectDay(i, {focus=false}={}) {
+    if (!Number.isInteger(i) || i<0 || i>=trip.length) return;
+    currentDay=i;
+    $$('.day-tab').forEach((tab,n)=>{tab.setAttribute('aria-selected',String(i===n));tab.tabIndex=i===n?0:-1;});
+    const active=$(`#tab-${i}`);
+    if(active){active.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth', inline:'center', block:'nearest'});if(focus)active.focus();}
+    renderDay();
+  }
+  function renderPrep(){
+    $('#prepGrid').innerHTML=preparation.map(g=>`<div class="ink-card checklist-card"><div class="checklist-head">${use(g.icon)}<h3>${escapeHTML(g.title)}</h3></div><p class="checklist-caption">${escapeHTML(g.caption)}</p>${g.items.map(([id,title])=>{const key=`prep-${g.id}-${id}`;return `<div class="checklist-row ${state.checked[key]?'is-done':''}">${checkbox(key,title)}<label class="item-text" data-check-target="${escapeHTML(key)}">${escapeHTML(title)}</label></div>`}).join('')}</div>`).join('');
+  }
+  function renderPacking(){
+    $('#packingGrid').innerHTML=packing.map(g=>`<div class="ink-card pack-card"><h3>${use(g.icon)}${escapeHTML(g.title)}</h3>${g.items.map(([id,title])=>{const key=`pack-${g.id}-${id}`;return `<div class="checklist-row ${state.checked[key]?'is-done':''}">${checkbox(key,title)}<label class="item-text" data-check-target="${escapeHTML(key)}">${escapeHTML(title)}</label></div>`}).join('')}</div>`).join('');
+    renderCustomPacking();
+  }
+  function renderCustomPacking(){
+    $('#customPackList').innerHTML=state.customPacking.map(item=>{const key=`custom-${item.id}`;return `<div class="checklist-row ${state.checked[key]?'is-done':''}">${checkbox(key,item.title)}<label class="item-text" data-check-target="${escapeHTML(key)}">${escapeHTML(item.title)}</label><button class="remove-item" data-remove="${escapeHTML(item.id)}" type="button" aria-label="刪除${escapeHTML(item.title)}">刪除</button></div>`}).join('');
+  }
+  function count(keys){return keys.filter(key=>state.checked[key]).length;}
+  function updateCounters(){
+    const all=getAllDayKeys(), pre=prepKeys(), bags=packKeys();
+    $('#totalDone').textContent=`${count(all)} / ${all.length} 完成`;
+    $('#prepCounter').textContent=`${count(pre)} / ${pre.length}`;
+    $('#packCounter').textContent=`${count(bags)} / ${bags.length}`;
+    const dayKeys=trip[currentDay].stops.map((stop,i)=>`day-${currentDay}-${i}`);
+    const completed=count(dayKeys), pc=Math.round(completed/dayKeys.length*100);
+    if($('#dayCount'))$('#dayCount').textContent=`${completed} / ${dayKeys.length}`;
+    if($('#dayMeterFill'))$('#dayMeterFill').style.width=`${pc}%`;
+    if($('#dayMeter'))$('#dayMeter').setAttribute('aria-valuenow',String(pc));
+  }
+  let toastTimeout;
+  function toast(message) {const el=$('#toast');el.textContent=message;el.classList.add('visible');clearTimeout(toastTimeout);toastTimeout=setTimeout(()=>el.classList.remove('visible'),2300);}
+  document.addEventListener('change',e=>{
+    const input=e.target.closest('input[type="checkbox"][data-key]');
+    if(!input)return;
+    state.checked[input.dataset.key]=input.checked;
+    const row=input.closest('.checklist-row, .timeline-item');
+    if(row)row.classList.toggle('is-done',input.checked);
+    save();updateCounters();
+  });
+  document.addEventListener('click',e=>{
+    const target=e.target.closest('[data-check-target]');
+    if(target){ const check=$$('[data-key]').find(el=>el.dataset.key===target.dataset.checkTarget); if(check)check.click(); return; }
+    const remove=e.target.closest('[data-remove]');
+    if(remove){state.customPacking=state.customPacking.filter(item=>item.id!==remove.dataset.remove);delete state.checked[`custom-${remove.dataset.remove}`];save();renderCustomPacking();updateCounters();toast('已移除自訂項目');}
+  });
+  $('#dayTabs').addEventListener('click',e=>{const t=e.target.closest('[data-day]');if(t)selectDay(Number(t.dataset.day));});
+  $('#dayTabs').addEventListener('keydown',e=>{
+    if(!['ArrowLeft','ArrowRight','Home','End'].includes(e.key))return;
+    e.preventDefault();const next=e.key==='Home'?0:e.key==='End'?trip.length-1:(currentDay+(e.key==='ArrowRight'?1:-1)+trip.length)%trip.length;selectDay(next,{focus:true});
+  });
+  $('#addPackForm').addEventListener('submit',e=>{
+    e.preventDefault();const input=$('#addPackInput');const title=input.value.trim().slice(0,36);
+    if(!title)return;
+    if(state.customPacking.length>=100){toast('自訂清單最多 100 項');return;}
+    const id=String(Date.now())+'-'+Math.random().toString(36).slice(2,7);
+    state.customPacking.push({id,title});save();renderCustomPacking();updateCounters();input.value='';input.focus();toast('已加入行李清單 ♡');
+  });
+  async function copyText(text) {
+    try {if(navigator.clipboard && window.isSecureContext){await navigator.clipboard.writeText(text);return true;}}catch(e){}
+    const area=document.createElement('textarea');area.value=text;area.style.position='fixed';area.style.opacity='0';document.body.append(area);area.focus();area.select();let ok=false;
+    try{ok=document.execCommand('copy');}catch(e){}area.remove();return ok;
+  }
+  $$('[data-copy]').forEach(btn=>btn.addEventListener('click',async()=>{
+    const elem=document.getElementById(btn.dataset.copy);
+    if(!elem)return;
+    toast(await copyText(elem.textContent.trim())?'地址已複製，可以貼到地圖囉 ♡':'複製失敗，請長按地址手動複製');
+  }));
+  $('#resetProgress').addEventListener('click',()=>{
+    if(!window.confirm('確定要清除所有行程、準備與行李的勾選紀錄嗎？\n（自行新增的行李項目會保留）'))return;
+    state.checked={};save();renderDay();renderPrep();renderPacking();updateCounters();toast('所有勾選紀錄已重設');
+  });
+  $('#backTop').addEventListener('click',()=>window.scrollTo({top:0,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'}));
+  window.addEventListener('scroll',()=>$('#backTop').classList.toggle('visible',window.scrollY>580),{passive:true});
+  function setCurrentTripDay(){
+    const today=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Tokyo',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
+    const i=trip.findIndex(d=>d.iso===today);
+    if(i>=0) currentDay=i;
+  }
+  const previewHint=$('#schedulePreviewHelp');if(previewHint)previewHint.remove();
+  setCurrentTripDay();renderTabs();renderDay();renderPrep();renderPacking();updateCounters();
+  if('IntersectionObserver' in window){
+    const links=$$('.site-nav a');
+    const observer=new IntersectionObserver(entries=>{
+      const visible=entries.filter(e=>e.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];
+      if(visible)links.forEach(link=>link.setAttribute('aria-current',String(link.getAttribute('href')===`#${visible.target.id}`)));
+    },{rootMargin:'-15% 0px -62% 0px',threshold:[0,.05,.2,.4]});
+    ['home','flights','schedule','hotels','before-trip','packing'].forEach(id=>observer.observe(document.getElementById(id)));
+  }
+})();
+</script>
+</body>
+</html>
